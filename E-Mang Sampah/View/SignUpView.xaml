@@ -181,13 +181,13 @@
                 </PasswordBox.Background>
             </PasswordBox>
 
-            <Button x:Name="BtnLogin"
+            <Button x:Name="BtnSignUp"
                         BorderThickness="0"
-                        Content="Login"
+                        Content="SignUp"
                         FontSize="12"
                         Grid.Column="2"
                         Margin="0,15,0,0"
-                        Click="BtnLogin_Click"
+                        Click="BtnSignUp_Click"
                         FontFamily="Gilroy"
                         FontWeight="Semibold">
                 <Button.Style>
@@ -214,43 +214,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-
-
-            <Button x:Name="BtnSignUp"
-                        BorderThickness="0"
-                        Content="Sign Up"
-                        FontSize="8"
-                        Grid.Column="2"
-                        Margin="0,5,0,0"
-                        Click="BtnLogin_Click"
-                        FontFamily="Gilroy"
-                        FontWeight="Medium"
-                        Cursor="Hand">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Background" Value="Transparent"/>
-                        <Setter Property="Foreground" Value="#FFFF"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="Transparent"/>
-                                <Setter Property="Foreground" Value="#A2FF86"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="Auto" 
-                                    Height="Auto" 
-                                    CornerRadius="2" 
-                                    Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center"
-                              HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-        </StackPanel>
+                </StackPanel>
     </Grid>
 </Border>
 </Border>

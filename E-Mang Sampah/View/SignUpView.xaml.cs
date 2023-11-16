@@ -20,6 +20,7 @@ namespace E_Mang_Sampah.View
     /// </summary>
     public partial class SignUpView : Window
     {
+        AccountEntities db = new AccountEntities();
         public SignUpView()
         {
             InitializeComponent();
@@ -36,13 +37,18 @@ namespace E_Mang_Sampah.View
 
         private void BtnClosed_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
-        }
-
-        private void BtnLogin_Click(object sender, RoutedEventArgs e)
-        {
             Login login = new Login();
             login.Show();
+            this.Hide();
+        }
+
+        private void BtnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            string username = TxtUsername.Text;
+            string password = TxtPassword.Password;
+            var acc = new Account { Username = username, Password = password };
+            db.Accounts.Add(acc);
+            db.SaveChanges();
         }
     }
 }

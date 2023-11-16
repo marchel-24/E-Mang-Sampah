@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using E_Mang_Sampah;
 using E_Mang_Sampah.View;
 
 namespace WpfApp1
@@ -21,6 +22,7 @@ namespace WpfApp1
     /// </summary>
     public partial class Login : Window
     {
+        AccountEntities db = new AccountEntities();
         public Login()
         {
             InitializeComponent();
@@ -42,7 +44,14 @@ namespace WpfApp1
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            if (db.Accounts.Where(r => r.Username == TxtUsername.Text && r.Password == TxtPassword.Password).Count() > 0)
+            {
+                MessageBox.Show("Valid");
+            }
+            else
+            {
+                MessageBox.Show("Invalid");
+            }
         }
 
         private void BtnSignUp_Click(object sender, RoutedEventArgs e)
