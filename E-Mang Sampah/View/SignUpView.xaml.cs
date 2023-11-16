@@ -10,18 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using E_Mang_Sampah.View;
+using WpfApp1;
 
-namespace WpfApp1
+namespace E_Mang_Sampah.View
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for SignUpView.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class SignUpView : Window
     {
-        public Login()
+        public SignUpView()
         {
             InitializeComponent();
         }
@@ -42,14 +41,8 @@ namespace WpfApp1
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void BtnSignUp_Click(object sender, RoutedEventArgs e)
-        {
-            SignUpView sign = new SignUpView();
-            sign.Show();
-            this.Hide();
+            Login login = new Login();
+            login.Show();
         }
     }
 }
