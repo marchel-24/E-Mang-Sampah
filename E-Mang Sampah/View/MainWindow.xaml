@@ -6,26 +6,41 @@
         xmlns:local="clr-namespace:E_Mang_Sampah"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        ResizeMode="CanResize"
-        Background="Transparent">
-    <Border CornerRadius="10">
-        <Border.Background>
-            <SolidColorBrush Color="#FFFF"/>
-        </Border.Background>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Border CornerRadius="10"
+            BorderThickness="1">
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#164B60" Offset="0"/>
+                <GradientStop Color="#4FC0D0" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <Grid Margin="-1,-1,0,-1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="15"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="25"/>
-                <ColumnDefinition Width="25"/>
-                <ColumnDefinition Width="5"/>
+                <!--Navigation menu-->
+                <ColumnDefinition Width="0"/>
+                <ColumnDefinition Width="75"/>
+                <!--Content section-->
+                <ColumnDefinition Width="*"/>
+
             </Grid.ColumnDefinitions>
 
+            <!--Navigation menu-->
+            <Border CornerRadius="10,0,0,10"
+                    Grid.Column="0" Grid.ColumnSpan="2">
+
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#164B60" Offset="0"/>
+                        <GradientStop Color="#164B60" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
         </Grid>
     </Border>
 </Window>
