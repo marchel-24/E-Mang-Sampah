@@ -22,7 +22,7 @@ namespace WpfApp1
     /// </summary>
     public partial class Login : Window
     {
-        AccountEntities db = new AccountEntities();
+        AccountEntities1 db = new AccountEntities1();
         public Login()
         {
             InitializeComponent();
@@ -46,7 +46,9 @@ namespace WpfApp1
         {
             if (db.Accounts.Where(r => r.Username == TxtUsername.Text && r.Password == TxtPassword.Password).Count() > 0)
             {
-                MessageBox.Show("Valid");
+                MainWindow main = new MainWindow();
+                main.Show();
+                this.Hide();
             }
             else
             {
