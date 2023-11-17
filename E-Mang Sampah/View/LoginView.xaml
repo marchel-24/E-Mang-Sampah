@@ -188,7 +188,8 @@
                             Margin="0,15,0,0"
                             Click="BtnLogin_Click"
                             FontFamily="Gilroy"
-                            FontWeight="Semibold">
+                            FontWeight="Semibold"
+                            Cursor="Hand">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#164B60"/>

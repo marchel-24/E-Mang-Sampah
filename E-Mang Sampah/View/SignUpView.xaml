@@ -108,112 +108,144 @@
                         Grid.Row="1"
                         Orientation="Vertical"
                         Margin="0,35,0,10">
-            <Image Source="/Images/Logo.png"
-                       Width="75"
-                       Height="75"
-                       Margin="0,5,0,0"/>
-            <TextBlock Text="Welcosdme"
-                           FontFamily="Gilroy"
-                           FontWeight="Bold"
-                           FontSize="24"
-                           Margin="0,10,0,0"
-                           Foreground="White"
-                           HorizontalAlignment="Center"
-                           />
-            <TextBlock Text="Jadilah bagian dari solusi, bukan polusi."
-                           FontFamily="Gilroy"
-                           FontWeight="Medium"
-                           FontSize="8"
-                           Foreground="White"
-                           HorizontalAlignment="Center"
-                           Margin="0,10,0,0"/>
-            <TextBlock Text="Username"
-                           FontFamily="Gilroy"
-                           FontWeight="SemiBold"
-                           FontSize="13"
-                           Foreground="White"
-                           Margin="0,20,0,0"
-                           />
+                        <Image Source="/Images/Logo.png"
+                                   Width="75"
+                                   Height="75"
+                                   Margin="0,5,0,0"/>
+                        <TextBlock Text="Welcosdme"
+                                       FontFamily="Gilroy"
+                                       FontWeight="Bold"
+                                       FontSize="24"
+                                       Margin="0,10,0,0"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       />
+                        <TextBlock Text="Jadilah bagian dari solusi, bukan polusi."
+                                       FontFamily="Gilroy"
+                                       FontWeight="Medium"
+                                       FontSize="8"
+                                       Foreground="White"
+                                       HorizontalAlignment="Center"
+                                       Margin="0,10,0,0"/>
+                        <TextBlock Text="Username"
+                                       FontFamily="Gilroy"
+                                       FontWeight="SemiBold"
+                                       FontSize="13"
+                                       Foreground="White"
+                                       Margin="0,20,0,0"
+                                       />
 
-            <TextBox x:Name="TxtUsername"
-                          FontSize="11"
-                          FontWeight="Medium"
-                          FontFamily="Gilroy"
-                          Foreground="White"
-                          CaretBrush="LightGray"
-                          BorderBrush="DarkGray"
-                          BorderThickness="0,0,0,2"
-                          Height="28"
-                          VerticalContentAlignment="Center"
-                          Margin="0,5,0,0"
-                         Padding="28,0,0,0">
-                <TextBox.Background>
-                    <ImageBrush ImageSource="/Images/user.png"
-                                    Stretch="Uniform"
-                                    AlignmentX="Left"/>
-                </TextBox.Background>
-            </TextBox>
+                        <TextBox x:Name="TxtUsername"
+                                      FontSize="11"
+                                      FontWeight="Medium"
+                                      FontFamily="Gilroy"
+                                      Foreground="White"
+                                      CaretBrush="LightGray"
+                                      BorderBrush="DarkGray"
+                                      BorderThickness="0,0,0,2"
+                                      Height="28"
+                                      VerticalContentAlignment="Center"
+                                      Margin="0,5,0,0"
+                                     Padding="28,0,0,0">
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/Images/user.png"
+                                                Stretch="Uniform"
+                                                AlignmentX="Left"/>
+                            </TextBox.Background>
+                        </TextBox>
 
 
-            <TextBlock Text="Password"
-                           FontFamily="Gilroy"
-                           FontWeight="SemiBold"
-                           FontSize="13"
-                           Foreground="White"
-                           Margin="0,20,0,0"
-                           />
-            <PasswordBox x:Name="TxtPassword"
-                         FontSize="11"
-                         FontWeight="Medium"
-                         FontFamily="Gilroy"
-                         Foreground="White"
-                         CaretBrush="LightGray"
-                         BorderBrush="DarkGray"
-                         BorderThickness="0,0,0,2"
-                         Height="28"
-                         VerticalContentAlignment="Center"
-                         Margin="0,5,0,0"
-                         Padding="28,0,0,0">
-                <PasswordBox.Background>
-                    <ImageBrush ImageSource="/Images/password.png"
-                            Stretch="Uniform"
-                            AlignmentX="Left"/>
-                </PasswordBox.Background>
-            </PasswordBox>
+                        <TextBlock Text="Password"
+                                       FontFamily="Gilroy"
+                                       FontWeight="SemiBold"
+                                       FontSize="13"
+                                       Foreground="White"
+                                       Margin="0,20,0,0"
+                                       />
+                        <PasswordBox x:Name="TxtPassword"
+                                     FontSize="11"
+                                     FontWeight="Medium"
+                                     FontFamily="Gilroy"
+                                     Foreground="White"
+                                     CaretBrush="LightGray"
+                                     BorderBrush="DarkGray"
+                                     BorderThickness="0,0,0,2"
+                                     Height="28"
+                                     VerticalContentAlignment="Center"
+                                     Margin="0,5,0,0"
+                                     Padding="28,0,0,0">
+                            <PasswordBox.Background>
+                                <ImageBrush ImageSource="/Images/password.png"
+                                        Stretch="Uniform"
+                                        AlignmentX="Left"/>
+                            </PasswordBox.Background>
+                        </PasswordBox>
 
-            <Button x:Name="BtnSignUp"
-                        BorderThickness="0"
-                        Content="SignUp"
-                        FontSize="12"
-                        Grid.Column="2"
-                        Margin="0,15,0,0"
-                        Click="BtnSignUp_Click"
-                        FontFamily="Gilroy"
-                        FontWeight="Semibold">
-                <Button.Style>
-                    <Style TargetType="Button">
-                        <Setter Property="Background" Value="#164B60"/>
-                        <Setter Property="Foreground" Value="#FFFF"/>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FFFF"/>
-                                <Setter Property="Foreground" Value="#164B60"/>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Button.Style>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Width="100" 
-                                    Height="25" 
-                                    CornerRadius="2" 
-                                    Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center"
-                              HorizontalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
+                        <Button x:Name="BtnSignUp"
+                                    BorderThickness="0"
+                                    Content="SignUp"
+                                    FontSize="12"
+                                    Grid.Column="2"
+                                    Margin="0,15,0,0"
+                                    Click="BtnSignUp_Click"
+                                    FontFamily="Gilroy"
+                                    FontWeight="Semibold"
+                                    Cursor="Hand">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#164B60"/>
+                                    <Setter Property="Foreground" Value="#FFFF"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#FFFF"/>
+                                            <Setter Property="Foreground" Value="#164B60"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="100" 
+                                                Height="25" 
+                                                CornerRadius="2" 
+                                                Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                          HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <StackPanel Orientation="Horizontal"
+                                    HorizontalAlignment="Center"
+                                    Margin="0, 5, 0 ,0">
+                                <TextBlock Text="Sudah memiliki akun?"
+                                           FontFamily="Gilroy"
+                                           FontWeight="Light"
+                                           FontSize="8"
+                                           Foreground="White"
+                                           TextAlignment="Center"
+                                           Margin="0, 1, 0, 0"/>
+                        <Button x:Name="BtnLogin2"
+                                BorderThickness="0"
+                                Content="Login"
+                                FontFamily="Gilroy"
+                                FontWeight="SemiBold"
+                                Background="Transparent"
+                                Cursor="Hand"
+                                Click="BtnLogin2_Click"
+                                FontSize="8"
+                                >
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="Foreground" Value="#BFBFBF"/>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            
+                        </Button>
+                        </StackPanel>
                 </StackPanel>
     </Grid>
 </Border>

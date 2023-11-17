@@ -22,7 +22,7 @@ namespace WpfApp1
     /// </summary>
     public partial class Login : Window
     {
-        AccountEntities1 db = new AccountEntities1();
+        AccountEntities2 db = new AccountEntities2();
         public Login()
         {
             InitializeComponent();
