@@ -25,5 +25,10 @@ namespace E_Mang_Sampah
         {
             InitializeComponent();
         }
+
+        private void Btn_Menu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

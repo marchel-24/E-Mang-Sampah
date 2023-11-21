@@ -112,7 +112,7 @@
                                    Width="75"
                                    Height="75"
                                    Margin="0,5,0,0"/>
-                        <TextBlock Text="Welcosdme"
+                        <TextBlock Text="Welcome, newb"
                                        FontFamily="Gilroy"
                                        FontWeight="Bold"
                                        FontSize="24"
