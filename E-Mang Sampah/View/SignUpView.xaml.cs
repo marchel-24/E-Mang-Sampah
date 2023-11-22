@@ -20,7 +20,7 @@ namespace E_Mang_Sampah.View
     /// </summary>
     public partial class SignUpView : Window
     {
-        AccountEntities2 db = new AccountEntities2();
+        EmangSampahEntities db = new EmangSampahEntities();
         public SignUpView()
         {
             InitializeComponent();

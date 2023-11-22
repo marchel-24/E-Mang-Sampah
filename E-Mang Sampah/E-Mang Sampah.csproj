@@ -68,22 +68,22 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Account.cs">
-      <DependentUpon>AccountModel.tt</DependentUpon>
+      <DependentUpon>E-mangSampahModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AccountModel.Context.cs">
+    <Compile Include="E-mangSampahModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AccountModel.Context.tt</DependentUpon>
+      <DependentUpon>E-mangSampahModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="AccountModel.cs">
+    <Compile Include="E-mangSampahModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AccountModel.tt</DependentUpon>
+      <DependentUpon>E-mangSampahModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AccountModel.Designer.cs">
+    <Compile Include="E-mangSampahModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AccountModel.edmx</DependentUpon>
+      <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
@@ -133,12 +133,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="AccountModel.edmx">
+    <EntityDeploy Include="E-mangSampahModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AccountModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>E-mangSampahModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="AccountModel.edmx.diagram">
-      <DependentUpon>AccountModel.edmx</DependentUpon>
+    <None Include="E-mangSampahModel.edmx.diagram">
+      <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -159,19 +159,19 @@
     <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AccountModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AccountModel.edmx</DependentUpon>
-      <LastGenOutput>AccountModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="AccountModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AccountModel.edmx</DependentUpon>
-      <LastGenOutput>AccountModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="E-mangSampahModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
+      <LastGenOutput>E-mangSampahModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="E-mangSampahModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
+      <LastGenOutput>E-mangSampahModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

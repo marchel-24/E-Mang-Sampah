@@ -13,10 +13,10 @@ namespace E_Mang_Sampah
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AccountEntities : DbContext
+    public partial class EmangSampahEntities : DbContext
     {
-        public AccountEntities()
-            : base("name=AccountEntities")
+        public EmangSampahEntities()
+            : base("name=EmangSampahEntities")
         {
         }
     
