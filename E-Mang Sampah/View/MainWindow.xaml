@@ -13,15 +13,15 @@
         AllowsTransparency="True">
 
     <Border CornerRadius="10"
-            BorderThickness="1">
+            BorderThickness="0.1">
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#164B60" Offset="0"/>
-                <GradientStop Color="#4FC0D0" Offset="1"/>
+                <GradientStop Color="{StaticResource primaryBackColor2}" Offset="0"/>
+                <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="1"/>
             </LinearGradientBrush>
         </Border.BorderBrush>
 
-        <Grid Margin="-1,-1,0,-1">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <!--Navigation menu-->
                 <ColumnDefinition Width="175"/>
@@ -47,8 +47,8 @@
                             CornerRadius="10 ,0, 0, 10">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                                <GradientStop Color="#1B6B93" Offset="0"/>
-                                <GradientStop Color="#4FC0D0" Offset="0.75"/>
+                                <GradientStop Color="{StaticResource primaryBackColor2}" Offset="0"/>
+                                <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="0.75"/>
                             </LinearGradientBrush>
                         </Border.Background>
                     </Border>
@@ -70,20 +70,31 @@
                                                VerticalAlignment="Center"
                                                FontFamily="Gilroy"
                                                FontSize="12"
-                                               Foreground="White"
+                                               Foreground="{StaticResource titleColor1}"
                                                FontWeight="SemiBold"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>
 
-                        <Button x:Name="BtnHome"
-                               Background="Transparent"
-                                BorderBrush="Transparent">
+                        <RadioButton Style="{StaticResource menuButton}"
+                                     Tag="{StaticResource ButtonColor1}">
                             <StackPanel Orientation="Horizontal">
-                                
+                                <fa:IconImage Icon="LocationPin" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="JunkPick" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
-                        </Button>
+                        </RadioButton>
+
+                        <RadioButton Style="{StaticResource menuButton}"
+                            Tag="{StaticResource ButtonColor1}">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="CommentAlt" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Community" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+
+
                     </StackPanel>
+             
                 </Grid>
             </Border>
 

@@ -22,8 +22,8 @@
         Opacity="0.9">
     <Border.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-            <GradientStop Color="#1B6B93" Offset="0"/>
-            <GradientStop Color="#4FC0D0" Offset="0.75"/>
+            <GradientStop Color="{StaticResource primaryBackColor2}" Offset="0"/>
+            <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="0.75"/>
         </LinearGradientBrush>
     </Border.Background>
     <Grid>
@@ -49,12 +49,12 @@
                         >
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#FFFF"/>
-                        <Setter Property="Foreground" Value="#1B6B93"/>
+                        <Setter Property="Background" Value="{StaticResource ButtonColor1}"/>
+                        <Setter Property="Foreground" Value="{StaticResource ButtonContent1}"/>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#164B60"/>
-                                <Setter Property="Foreground" Value="#FFFF"/>
+                                <Setter Property="Background" Value="{StaticResource ButtonColor1_Hover}"/>
+                                <Setter Property="Foreground" Value="{StaticResource ButtonContent1_Hover}"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -81,12 +81,12 @@
                         FontFamily="Calibri">
                 <Button.Style>
                     <Style TargetType="Button">
-                        <Setter Property="Background" Value="#FFFF"/>
-                        <Setter Property="Foreground" Value="#DF3232"/>
+                        <Setter Property="Background" Value="{StaticResource ButtonColor1}"/>
+                        <Setter Property="Foreground" Value="{StaticResource ButtonContent2}"/>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#164B60"/>
-                                <Setter Property="Foreground" Value="#FFFF"/>
+                                <Setter Property="Background" Value="{StaticResource ButtonColor1_Hover}"/>
+                                <Setter Property="Foreground" Value="{StaticResource ButtonContent2_Hover}"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -117,21 +117,21 @@
                                        FontWeight="Bold"
                                        FontSize="24"
                                        Margin="0,10,0,0"
-                                       Foreground="White"
+                                       Foreground="{StaticResource titleColor1}"
                                        HorizontalAlignment="Center"
                                        />
                         <TextBlock Text="Jadilah bagian dari solusi, bukan polusi."
                                        FontFamily="Gilroy"
                                        FontWeight="Medium"
                                        FontSize="8"
-                                       Foreground="White"
+                                       Foreground="{StaticResource titleColor1}"
                                        HorizontalAlignment="Center"
                                        Margin="0,10,0,0"/>
                         <TextBlock Text="Username"
                                        FontFamily="Gilroy"
                                        FontWeight="SemiBold"
                                        FontSize="13"
-                                       Foreground="White"
+                                       Foreground="{StaticResource titleColor1}"
                                        Margin="0,20,0,0"
                                        />
 
@@ -139,9 +139,9 @@
                                       FontSize="11"
                                       FontWeight="Medium"
                                       FontFamily="Gilroy"
-                                      Foreground="White"
-                                      CaretBrush="LightGray"
-                                      BorderBrush="DarkGray"
+                                      Foreground="{StaticResource titleColor1}"
+                                      CaretBrush="{StaticResource ObjColor1}"
+                                      BorderBrush="{StaticResource BorderColor1}"
                                       BorderThickness="0,0,0,2"
                                       Height="28"
                                       VerticalContentAlignment="Center"
@@ -159,16 +159,16 @@
                                        FontFamily="Gilroy"
                                        FontWeight="SemiBold"
                                        FontSize="13"
-                                       Foreground="White"
+                                       Foreground="{StaticResource titleColor1}"
                                        Margin="0,20,0,0"
                                        />
                         <PasswordBox x:Name="TxtPassword"
                                      FontSize="11"
                                      FontWeight="Medium"
                                      FontFamily="Gilroy"
-                                     Foreground="White"
-                                     CaretBrush="LightGray"
-                                     BorderBrush="DarkGray"
+                                     Foreground="{StaticResource titleColor1}"
+                                     CaretBrush="{StaticResource ObjColor1}"
+                                     BorderBrush="{StaticResource BorderColor1}"
                                      BorderThickness="0,0,0,2"
                                      Height="28"
                                      VerticalContentAlignment="Center"
@@ -193,12 +193,12 @@
                                     Cursor="Hand">
                             <Button.Style>
                                 <Style TargetType="Button">
-                                    <Setter Property="Background" Value="#164B60"/>
-                                    <Setter Property="Foreground" Value="#FFFF"/>
+                                    <Setter Property="Background" Value="{StaticResource ButtonColor2}"/>
+                                    <Setter Property="Foreground" Value="{StaticResource ButtonContent3}"/>
                                     <Style.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#FFFF"/>
-                                            <Setter Property="Foreground" Value="#164B60"/>
+                                            <Setter Property="Background" Value="{StaticResource ButtonColor2_Hover}"/>
+                                            <Setter Property="Foreground" Value="{StaticResource ButtonContent3_Hover}"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
@@ -222,7 +222,7 @@
                                            FontFamily="Gilroy"
                                            FontWeight="Light"
                                            FontSize="8"
-                                           Foreground="White"
+                                           Foreground="{StaticResource textColor1}"
                                            TextAlignment="Center"
                                            Margin="0, 1, 0, 0"/>
                         <Button x:Name="BtnLogin2"
@@ -237,9 +237,9 @@
                                 >
                             <Button.Style>
                                 <Style TargetType="Button">
-                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="Foreground" Value="{StaticResource ButtonContent4}"/>
                                     <Style.Triggers>
-                                        <Trigger Property="Foreground" Value="#BFBFBF"/>
+                                        <Trigger Property="Foreground" Value="{StaticResource ButtonContent4_Hover}"/>
                                     </Style.Triggers>
                                 </Style>
                             </Button.Style>
