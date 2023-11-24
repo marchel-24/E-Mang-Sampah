@@ -71,24 +71,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Account.cs">
+    <Compile Include="Model\Account.cs">
       <DependentUpon>E-mangSampahModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="E-mangSampahModel.Context.cs">
+    <Compile Include="Model\E-mangSampahModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>E-mangSampahModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="E-mangSampahModel.cs">
+    <Compile Include="Model\E-mangSampahModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>E-mangSampahModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="E-mangSampahModel.Designer.cs">
+    <Compile Include="Model\E-mangSampahModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Services\Navigation\NavigationManager.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\VIewModelCommand.cs" />
@@ -145,11 +146,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="E-mangSampahModel.edmx">
+    <EntityDeploy Include="Model\E-mangSampahModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>E-mangSampahModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="E-mangSampahModel.edmx.diagram">
+    <None Include="Model\E-mangSampahModel.edmx.diagram">
       <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -167,19 +168,17 @@
     <Resource Include="Images\Background.jpg" />
     <Resource Include="Images\user.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="E-mangSampahModel.Context.tt">
+    <Content Include="Model\E-mangSampahModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
       <LastGenOutput>E-mangSampahModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="E-mangSampahModel.tt">
+    <Content Include="Model\E-mangSampahModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
       <LastGenOutput>E-mangSampahModel.cs</LastGenOutput>

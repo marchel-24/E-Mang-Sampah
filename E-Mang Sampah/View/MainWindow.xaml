@@ -109,7 +109,7 @@
                         </RadioButton>
 
                     </StackPanel>
-             
+
                 </Grid>
             </Border>
 
@@ -119,6 +119,85 @@
                 <Border.Background>
                     <SolidColorBrush Color="White"/>
                 </Border.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height ="30"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="5"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="BtnMinimized"
+                                BorderThickness="0"
+                                Content="-"
+                                FontSize="24"
+                                Grid.Column="1"
+                                Click="BtnMinimized_click"
+                                FontFamily="Ca"
+                                VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,2,25,0"
+                                >
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="{StaticResource ButtonColor1}"/>
+                                    <Setter Property="Foreground" Value="{StaticResource ButtonContent1}"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="{StaticResource ButtonColor1_Hover}"/>
+                                            <Setter Property="Foreground" Value="{StaticResource ButtonContent1_Hover}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="18" 
+                                            Height="18" 
+                                            CornerRadius="9" 
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="BtnClosed"
+                                BorderThickness="0"
+                                Content="X"
+                                FontSize="12"
+                                Grid.Column="2"
+                                Click="BtnClosed_Click"
+                                FontFamily="Calibri">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="{StaticResource ButtonColor1}"/>
+                                    <Setter Property="Foreground" Value="{StaticResource ButtonContent2}"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="{StaticResource ButtonColor1_Hover}"/>
+                                            <Setter Property="Foreground" Value="{StaticResource ButtonContent2_Hover}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="18" 
+                                            Height="18" 
+                                            CornerRadius="9" 
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                             HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+                </Grid>
             </Border>
         </Grid>
     </Border>

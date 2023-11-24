@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace E_Mang_Sampah
+namespace E_Mang_Sampah.Model
 {
     using System;
     using System.Data.Entity;

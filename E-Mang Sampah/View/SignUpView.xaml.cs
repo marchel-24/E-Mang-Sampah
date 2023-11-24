@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using E_Mang_Sampah.Model;
+using E_Mang_Sampah.Services.Navigation;
 using WpfApp1;
 
 namespace E_Mang_Sampah.View
@@ -21,9 +23,11 @@ namespace E_Mang_Sampah.View
     public partial class SignUpView : Window
     {
         EmangSampahEntities db = new EmangSampahEntities();
+        NavigationManager navigationManager;
         public SignUpView()
         {
             InitializeComponent();
+            navigationManager = new NavigationManager(this);
         }
         private void Windows_Mouse(object sender, MouseButtonEventArgs e)
         {
@@ -50,9 +54,7 @@ namespace E_Mang_Sampah.View
         }
         private void BtnLogin2_Click(object sender, RoutedEventArgs e)
         {
-            Login login = new Login();
-            login.Show();
-            this.Hide();
+            navigationManager.NavigateWindow(new LoginView());
         }
     }
 }
