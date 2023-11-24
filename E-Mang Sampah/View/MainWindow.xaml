@@ -79,7 +79,7 @@
                         <RadioButton Style="{StaticResource menuButton}"
                                      Tag="{StaticResource ButtonColor1}">
                             <StackPanel Orientation="Horizontal">
-                                <fa:IconImage Icon="LocationPin" Style="{StaticResource menuButtonIcon}"/>
+                                <fa:IconImage Icon="MapMarkerAlt" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="JunkPick" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
@@ -92,6 +92,21 @@
                             </StackPanel>
                         </RadioButton>
 
+                        <RadioButton Style="{StaticResource menuButton}"
+                             Tag="{StaticResource ButtonColor1}">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="Gamepad" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Games" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+
+                        <RadioButton Style="{StaticResource menuButton}"
+                             Tag="{StaticResource ButtonColor1}">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="Person" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Account" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
 
                     </StackPanel>
              

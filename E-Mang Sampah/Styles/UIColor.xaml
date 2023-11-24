@@ -25,7 +25,8 @@
     <SolidColorBrush x:Key="ButtonColor1_Hover" Color="#164B60"/>
     <SolidColorBrush x:Key="ButtonColor2" Color="#164B60"/>
     <SolidColorBrush x:Key="ButtonColor2_Hover" Color="#FFFF"/>
-    
+    <SolidColorBrush x:Key="ButtonColor_Click" Color="#0F3240"/>
+
     <!--Object Colors-->
     <SolidColorBrush x:Key="ObjColor1" Color="LightGray"/>
     
