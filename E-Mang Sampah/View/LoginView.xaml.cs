@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using E_Mang_Sampah;
 using E_Mang_Sampah.Model;
+using E_Mang_Sampah.Services.Authentication;
 using E_Mang_Sampah.Services.Navigation;
 using E_Mang_Sampah.View;
 
@@ -26,10 +29,12 @@ namespace WpfApp1
     {
         EmangSampahEntities db = new EmangSampahEntities();
         NavigationManager navigationManager;
+        ValidationManager validationManager;
         public LoginView()
         {
             InitializeComponent();
             navigationManager = new NavigationManager(this);
+            validationManager = new ValidationManager(db);
         }
         private void Windows_Mouse(object sender, MouseButtonEventArgs e)
         {
@@ -48,11 +53,9 @@ namespace WpfApp1
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (db.Accounts.Where(r => r.Username == TxtUsername.Text && r.Password == TxtPassword.Password).Count() > 0)
+            if (validationManager.Validate(TxtUsername.Text, TxtPassword.Password))
             {
-                MainWindow main = new MainWindow();
-                main.Show();
-                this.Hide();
+                navigationManager.NavigateWindow(new MainWindow());
             }
             else
             {
