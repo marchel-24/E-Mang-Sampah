@@ -27,7 +27,7 @@ namespace WpfApp1
     /// </summary>
     public partial class LoginView : Window
     {
-        EmangSampahEntities db = new EmangSampahEntities();
+        EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
         NavigationManager navigationManager;
         ValidationManager validationManager;
         public LoginView()

@@ -22,7 +22,7 @@ namespace E_Mang_Sampah.View
     /// </summary>
     public partial class SignUpView : Window
     {
-        EmangSampahEntities db = new EmangSampahEntities();
+        EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
         NavigationManager navigationManager;
         public SignUpView()
         {

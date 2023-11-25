@@ -12,19 +12,13 @@ namespace E_Mang_Sampah.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Account
+    public partial class Post
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Account()
-        {
-            this.Posts = new HashSet<Post>();
-        }
-    
         public int Id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public string Content { get; set; }
+        public short LikesCount { get; set; }
+        public int AccountId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Post> Posts { get; set; }
+        public virtual Account Account { get; set; }
     }
 }

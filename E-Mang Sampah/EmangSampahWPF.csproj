@@ -72,22 +72,25 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Account.cs">
-      <DependentUpon>E-mangSampahModel.tt</DependentUpon>
+      <DependentUpon>EmangSampahModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\E-mangSampahModel.Context.cs">
+    <Compile Include="Model\EmangSampahModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>E-mangSampahModel.Context.tt</DependentUpon>
+      <DependentUpon>EmangSampahModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\E-mangSampahModel.cs">
+    <Compile Include="Model\EmangSampahModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>E-mangSampahModel.tt</DependentUpon>
+      <DependentUpon>EmangSampahModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\E-mangSampahModel.Designer.cs">
+    <Compile Include="Model\EmangSampahModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
+      <DependentUpon>EmangSampahModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Post.cs">
+      <DependentUpon>EmangSampahModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Services\Validation\ValidationManager.cs" />
     <Compile Include="Services\Navigation\NavigationManager.cs" />
@@ -147,13 +150,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\E-mangSampahModel.edmx">
+    <EntityDeploy Include="Model\EmangSampahModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>E-mangSampahModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>EmangSampahModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\E-mangSampahModel.edmx.diagram">
-      <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -169,20 +169,20 @@
     <Resource Include="Images\Background.jpg" />
     <Resource Include="Images\user.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\E-mangSampahModel.Context.tt">
+    <Content Include="Model\EmangSampahModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
-      <LastGenOutput>E-mangSampahModel.Context.cs</LastGenOutput>
+      <LastGenOutput>EmangSampahModel.Context.cs</LastGenOutput>
+      <DependentUpon>EmangSampahModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Model\E-mangSampahModel.tt">
+    <Content Include="Model\EmangSampahModel.edmx.sql" />
+    <Content Include="Model\EmangSampahModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
-      <LastGenOutput>E-mangSampahModel.cs</LastGenOutput>
+      <LastGenOutput>EmangSampahModel.cs</LastGenOutput>
+      <DependentUpon>EmangSampahModel.edmx</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

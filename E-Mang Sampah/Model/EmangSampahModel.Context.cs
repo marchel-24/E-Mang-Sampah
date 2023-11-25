@@ -13,10 +13,10 @@ namespace E_Mang_Sampah.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EmangSampahEntities : DbContext
+    public partial class EmangSampahModelContainer1 : DbContext
     {
-        public EmangSampahEntities()
-            : base("name=EmangSampahEntities")
+        public EmangSampahModelContainer1()
+            : base("name=EmangSampahModelContainer1")
         {
         }
     
@@ -26,5 +26,6 @@ namespace E_Mang_Sampah.Model
         }
     
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Post> Posts { get; set; }
     }
 }
