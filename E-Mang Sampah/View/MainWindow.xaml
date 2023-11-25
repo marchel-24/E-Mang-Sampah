@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:E_Mang_Sampah"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
@@ -12,34 +13,191 @@
         AllowsTransparency="True">
 
     <Border CornerRadius="10"
-            BorderThickness="1">
+            BorderThickness="0.1">
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#164B60" Offset="0"/>
-                <GradientStop Color="#4FC0D0" Offset="1"/>
+                <GradientStop Color="{StaticResource primaryBackColor2}" Offset="0"/>
+                <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="1"/>
             </LinearGradientBrush>
         </Border.BorderBrush>
 
-        <Grid Margin="-1,-1,0,-1">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <!--Navigation menu-->
-                <ColumnDefinition Width="0"/>
-                <ColumnDefinition Width="75"/>
+                <ColumnDefinition Width="175"/>
                 <!--Content section-->
                 <ColumnDefinition Width="*"/>
 
             </Grid.ColumnDefinitions>
 
             <!--Navigation menu-->
-            <Border CornerRadius="10,0,0,10"
-                    Grid.Column="0" Grid.ColumnSpan="2">
+            <Border CornerRadius="10,0,0,10" Grid.Column="0">
+                <Grid>
+                    <!-- Image Background -->
+                    <Border>
+                        <Border.Effect>
+                            <BlurEffect Radius="10"/>
+                        </Border.Effect>
+                        <Border.Background>
+                            <ImageBrush ImageSource="/Images/Background.jpg" Stretch="UniformToFill"/>
+                        </Border.Background>
+                    </Border>
+                    <!-- Gradient Overlay -->
+                    <Border Opacity="0.89"
+                            CornerRadius="10 ,0, 0, 10">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                <GradientStop Color="{StaticResource primaryBackColor2}" Offset="0"/>
+                                <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="0.75"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
 
+                    <!--Logo-->
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" Height="35" Margin="13, 25, 25, 40">
+                            <!-- Add your logo elements here -->
+                            <Button x:Name="Btn_Menu"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent" Width="137"
+                                    Click="Btn_Menu_Click">
+                                <Button.Effect>
+                                    <DropShadowEffect BlurRadius="10" Color="Black" Direction="270" ShadowDepth="1" Opacity="0.3"/>
+                                </Button.Effect>
+                                <StackPanel Orientation="Horizontal" Width="174">
+                                    <Image Source="/Images/Logo.png" Height="27" Width="37"></Image>
+                                    <TextBlock Text="E-Mang Sampah"
+                                               VerticalAlignment="Center"
+                                               FontFamily="Gilroy"
+                                               FontSize="12"
+                                               Foreground="{StaticResource titleColor1}"
+                                               FontWeight="SemiBold"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+
+                        <RadioButton Style="{StaticResource menuButton}"
+                                     Tag="{StaticResource ButtonColor1}">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="MapMarkerAlt" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="JunkPick" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+
+                        <RadioButton Style="{StaticResource menuButton}"
+                            Tag="{StaticResource ButtonColor1}">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="CommentAlt" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Community" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+
+                        <RadioButton Style="{StaticResource menuButton}"
+                             Tag="{StaticResource ButtonColor1}">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="Gamepad" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Games" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+
+                        <RadioButton Style="{StaticResource menuButton}"
+                             Tag="{StaticResource ButtonColor1}">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="Person" Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Account" Style="{StaticResource menuButtonText}"/>
+                            </StackPanel>
+                        </RadioButton>
+
+                    </StackPanel>
+
+                </Grid>
+            </Border>
+
+            <!--Main Section-->
+            <Border CornerRadius="0, 10, 10, 0"
+                    Grid.Column="1">
                 <Border.Background>
-                    <LinearGradientBrush>
-                        <GradientStop Color="#164B60" Offset="0"/>
-                        <GradientStop Color="#164B60" Offset="1"/>
-                    </LinearGradientBrush>
+                    <SolidColorBrush Color="White"/>
                 </Border.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height ="30"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="25"/>
+                            <ColumnDefinition Width="5"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="BtnMinimized"
+                                BorderThickness="0"
+                                Content="-"
+                                FontSize="24"
+                                Grid.Column="1"
+                                Click="BtnMinimized_click"
+                                FontFamily="Ca"
+                                VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,2,25,0"
+                                >
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="{StaticResource ButtonColor1}"/>
+                                    <Setter Property="Foreground" Value="{StaticResource ButtonContent1}"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="{StaticResource ButtonColor1_Hover}"/>
+                                            <Setter Property="Foreground" Value="{StaticResource ButtonContent1_Hover}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="18" 
+                                            Height="18" 
+                                            CornerRadius="9" 
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <Button x:Name="BtnClosed"
+                                BorderThickness="0"
+                                Content="X"
+                                FontSize="12"
+                                Grid.Column="2"
+                                Click="BtnClosed_Click"
+                                FontFamily="Calibri">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="{StaticResource ButtonColor1}"/>
+                                    <Setter Property="Foreground" Value="{StaticResource ButtonContent2}"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="{StaticResource ButtonColor1_Hover}"/>
+                                            <Setter Property="Foreground" Value="{StaticResource ButtonContent2_Hover}"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="18" 
+                                            Height="18" 
+                                            CornerRadius="9" 
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                             HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+                </Grid>
             </Border>
         </Grid>
     </Border>

@@ -25,5 +25,20 @@ namespace E_Mang_Sampah
         {
             InitializeComponent();
         }
+
+        private void Btn_Menu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnMinimized_click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void BtnClosed_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

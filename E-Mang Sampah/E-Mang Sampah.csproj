@@ -44,11 +44,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,24 +71,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Account.cs">
-      <DependentUpon>AccountModel.tt</DependentUpon>
+    <Compile Include="Model\Account.cs">
+      <DependentUpon>E-mangSampahModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AccountModel.Context.cs">
+    <Compile Include="Model\E-mangSampahModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AccountModel.Context.tt</DependentUpon>
+      <DependentUpon>E-mangSampahModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="AccountModel.cs">
+    <Compile Include="Model\E-mangSampahModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AccountModel.tt</DependentUpon>
+      <DependentUpon>E-mangSampahModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="AccountModel.Designer.cs">
+    <Compile Include="Model\E-mangSampahModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AccountModel.edmx</DependentUpon>
+      <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Services\Validation\ValidationManager.cs" />
+    <Compile Include="Services\Navigation\NavigationManager.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\VIewModelCommand.cs" />
@@ -94,6 +100,14 @@
     <Compile Include="View\SignUpView.xaml.cs">
       <DependentUpon>SignUpView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Styles\ButtonColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\UIColor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -133,12 +147,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="AccountModel.edmx">
+    <EntityDeploy Include="Model\E-mangSampahModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AccountModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>E-mangSampahModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="AccountModel.edmx.diagram">
-      <DependentUpon>AccountModel.edmx</DependentUpon>
+    <None Include="Model\E-mangSampahModel.edmx.diagram">
+      <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -155,23 +169,21 @@
     <Resource Include="Images\Background.jpg" />
     <Resource Include="Images\user.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AccountModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AccountModel.edmx</DependentUpon>
-      <LastGenOutput>AccountModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="AccountModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AccountModel.edmx</DependentUpon>
-      <LastGenOutput>AccountModel.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\E-mangSampahModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
+      <LastGenOutput>E-mangSampahModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\E-mangSampahModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>E-mangSampahModel.edmx</DependentUpon>
+      <LastGenOutput>E-mangSampahModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
