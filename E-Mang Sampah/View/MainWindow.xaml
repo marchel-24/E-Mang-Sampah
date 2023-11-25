@@ -79,7 +79,7 @@
                         <RadioButton Style="{StaticResource menuButton}"
                                      Tag="{StaticResource ButtonColor1}">
                             <StackPanel Orientation="Horizontal">
-                                <fa:IconImage Icon="MapMarkerAlt" Style="{StaticResource menuButtonIcon}"/>
+                                <fa:IconImage Icon="MapMarkedAlt" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="JunkPick" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
@@ -124,79 +124,44 @@
                         <RowDefinition Height ="30"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
+                    <StackPanel
+                         x:Name="pnlControlBar"
+                         Grid.Row="0"
+                         Orientation="Horizontal"
+                         FlowDirection="RightToLeft"
+                         Background="Transparent"
+                         Margin="0,0,5,0"
+                         MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown"
+                         MouseEnter="pnlControlBar_MouseEnter">
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition Width="25"/>
-                            <ColumnDefinition Width="25"/>
-                            <ColumnDefinition Width="5"/>
-                        </Grid.ColumnDefinitions>
-                        <Button x:Name="BtnMinimized"
-                                BorderThickness="0"
-                                Content="-"
-                                FontSize="24"
-                                Grid.Column="1"
-                                Click="BtnMinimized_click"
-                                FontFamily="Ca"
-                                VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="0,2,25,0"
-                                >
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="Background" Value="{StaticResource ButtonColor1}"/>
-                                    <Setter Property="Foreground" Value="{StaticResource ButtonContent1}"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="{StaticResource ButtonColor1_Hover}"/>
-                                            <Setter Property="Foreground" Value="{StaticResource ButtonContent1_Hover}"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Width="18" 
-                                            Height="18" 
-                                            CornerRadius="9" 
-                                            Background="{TemplateBinding Background}">
-                                        <ContentPresenter VerticalAlignment="Center"
-                                            HorizontalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
+                        <Button x:Name="btnCLose"
+                                Style="{StaticResource controlButton1}"
+                                Tag="{StaticResource ButtonColor_Click}"
+                                Click="BtnClosed_Click">
+                            <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
+
                         </Button>
-                        <Button x:Name="BtnClosed"
-                                BorderThickness="0"
-                                Content="X"
-                                FontSize="12"
-                                Grid.Column="2"
-                                Click="BtnClosed_Click"
-                                FontFamily="Calibri">
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="Background" Value="{StaticResource ButtonColor1}"/>
-                                    <Setter Property="Foreground" Value="{StaticResource ButtonContent2}"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="{StaticResource ButtonColor1_Hover}"/>
-                                            <Setter Property="Foreground" Value="{StaticResource ButtonContent2_Hover}"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Width="18" 
-                                            Height="18" 
-                                            CornerRadius="9" 
-                                            Background="{TemplateBinding Background}">
-                                        <ContentPresenter VerticalAlignment="Center"
-                                             HorizontalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
+
+                        <Button x:Name="btnMaximize"
+                                Style="{StaticResource controlButton2}"
+                                Tag="{StaticResource ButtonColor_Click}"
+                                Click="btnMaximize_Click">
+                            <fa:IconImage Icon="Square" Style="{StaticResource controlButtonIcon}"/>
+
                         </Button>
-                    </Grid>
+                        
+                        <Button
+                            x:Name="btnMinimize"
+                                Style="{StaticResource controlButton2}"
+                                Tag="{StaticResource ButtonColor_Click}"
+                                Click="BtnMinimize_Click">
+                            <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
+                            
+                        </Button>
+
+                    </StackPanel>
+                           
+                    
                 </Grid>
             </Border>
         </Grid>
