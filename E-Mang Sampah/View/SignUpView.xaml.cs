@@ -46,7 +46,7 @@ namespace E_Mang_Sampah.View
 
         private void BtnSignUp_Click(object sender, RoutedEventArgs e)
         {
-            string username = TxtUsername.Text;
+            string username = TxtFistname.Text;
             string password = TxtPassword.Password;
             var acc = new Account { Username = username, Password = password };
             db.Accounts.Add(acc);

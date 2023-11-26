@@ -1,8 +1,8 @@
-﻿using System;
+﻿using E_Mang_Sampah.Model;
+using E_Mang_Sampah.Services.Navigation;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,29 +12,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using E_Mang_Sampah;
-using E_Mang_Sampah.Model;
-using E_Mang_Sampah.Services.Authentication;
-using E_Mang_Sampah.Services.Navigation;
-using E_Mang_Sampah.View;
+using WpfApp1;
 
-namespace WpfApp1
+namespace E_Mang_Sampah.View
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for Company_SignUp.xaml
     /// </summary>
-    public partial class LoginView : Window
+    public partial class Company_SignUp : Window
     {
         EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
         NavigationManager navigationManager;
-        ValidationManager validationManager;
-        public LoginView()
+        public Company_SignUp()
         {
             InitializeComponent();
             navigationManager = new NavigationManager(this);
-            validationManager = new ValidationManager(db);
         }
         private void Windows_Mouse(object sender, MouseButtonEventArgs e)
         {
@@ -51,21 +44,15 @@ namespace WpfApp1
             Application.Current.Shutdown();
         }
 
-        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        private void BtnLogin2_Click(object sender, RoutedEventArgs e)
         {
-            if (validationManager.Validate(TxtUsername.Text, TxtPassword.Password))
-            {
-                navigationManager.NavigateWindow(new MainWindow());
-            }
-            else
-            {
-                MessageBox.Show("Invalid");
-            }
+            navigationManager.NavigateWindow(new LoginView());
         }
 
         private void BtnSignUp_Click(object sender, RoutedEventArgs e)
         {
-            navigationManager.NavigateWindow(new NotifMitra());
+
+            navigationManager.NavigateWindow(new LoginView());
         }
     }
 }
