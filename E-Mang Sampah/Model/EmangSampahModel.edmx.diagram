@@ -5,9 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2487f6d99db740cd944917544840bc8b" Name="Diagram1" >
-        <EntityTypeShape EntityType="EmangSampahModel.Account" Width="1.5" PointX="4.375" PointY="1.625" />
-        <EntityTypeShape EntityType="EmangSampahModel.Post" Width="1.5" PointX="7.875" PointY="1.625" />
-        <AssociationConnector Association="EmangSampahModel.AccountPost" />
+        <EntityTypeShape EntityType="EmangSampahModel.Account" Width="1.5" PointX="4.125" PointY="1.375" />
+        <EntityTypeShape EntityType="EmangSampahModel.UserAccount" Width="1.5" PointX="5.25" PointY="4.375" />
+        <InheritanceConnector EntityType="EmangSampahModel.UserAccount" />
+        <EntityTypeShape EntityType="EmangSampahModel.PartnerAccount" Width="1.5" PointX="3.25" PointY="4.375" />
+        <InheritanceConnector EntityType="EmangSampahModel.PartnerAccount" />
+        <EntityTypeShape EntityType="EmangSampahModel.Posts" Width="1.5" PointX="7.375" PointY="1.375" />
+        <AssociationConnector Association="EmangSampahModel.AccountPosts" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

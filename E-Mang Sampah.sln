@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmangSampahWPF", "E-Mang Sampah\EmangSampahWPF.csproj", "{8F51266A-F3F9-47AE-9EC0-9D5B9AE6E585}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmangSampahTests", "EmangSampahTests\EmangSampahTests.csproj", "{29D6D16C-8238-4004-A90F-1F302DE44218}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmangSampahTests", "EmangSampahTests\EmangSampahTests.csproj", "{29D6D16C-8238-4004-A90F-1F302DE44218}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleForTest", "ConsoleForTest\ConsoleForTest.csproj", "{D1C62ECA-31CC-4326-BD0B-BD71D751A556}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{29D6D16C-8238-4004-A90F-1F302DE44218}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29D6D16C-8238-4004-A90F-1F302DE44218}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29D6D16C-8238-4004-A90F-1F302DE44218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1C62ECA-31CC-4326-BD0B-BD71D751A556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C62ECA-31CC-4326-BD0B-BD71D751A556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C62ECA-31CC-4326-BD0B-BD71D751A556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C62ECA-31CC-4326-BD0B-BD71D751A556}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,13 +12,8 @@ namespace E_Mang_Sampah.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Post
+    public partial class PartnerAccount : Account
     {
-        public int Id { get; set; }
-        public string Content { get; set; }
-        public short LikesCount { get; set; }
-        public int AccountId { get; set; }
-    
-        public virtual Account Account { get; set; }
+        public string CompanyName { get; set; }
     }
 }

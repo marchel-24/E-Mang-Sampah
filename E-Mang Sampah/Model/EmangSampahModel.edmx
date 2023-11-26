@@ -8,36 +8,90 @@
   <EntityContainer Name="EmangSampahModelStoreContainer">
     <EntitySet Name="Accounts" EntityType="EmangSampahModel.Store.Accounts" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Posts" EntityType="EmangSampahModel.Store.Posts" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="AccountPost" Association="EmangSampahModel.Store.AccountPost">
+    <EntitySet Name="Accounts_UserAccount" EntityType="EmangSampahModel.Store.Accounts_UserAccount" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Accounts_PartnerAccount" EntityType="EmangSampahModel.Store.Accounts_PartnerAccount" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="AccountPosts" Association="EmangSampahModel.Store.AccountPosts">
       <End Role="Account" EntitySet="Accounts" />
-      <End Role="Post" EntitySet="Posts" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserAccount_inherits_Account" Association="EmangSampahModel.Store.FK_UserAccount_inherits_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="UserAccount" EntitySet="Accounts_UserAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PartnerAccount_inherits_Account" Association="EmangSampahModel.Store.FK_PartnerAccount_inherits_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="PartnerAccount" EntitySet="Accounts_PartnerAccount" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Accounts">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="AccountId" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Posts">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="PostsId" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="LikesCount" Type="smallint" Nullable="false" />
+    <Property Name="PostsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="int" Nullable="false" />
+    <Property Name="LikesCount" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UploadTime" Type="datetime" Nullable="false" />
     <Property Name="AccountId" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="AccountPost">
+  <EntityType Name="Accounts_UserAccount">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AccountId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Accounts_PartnerAccount">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="CompanyName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AccountId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="AccountPosts">
     <End Role="Account" Type="EmangSampahModel.Store.Accounts" Multiplicity="1" />
-    <End Role="Post" Type="EmangSampahModel.Store.Posts" Multiplicity="*" />
+    <End Role="Posts" Type="EmangSampahModel.Store.Posts" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Account">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="AccountId" />
       </Principal>
-      <Dependent Role="Post">
+      <Dependent Role="Posts">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserAccount_inherits_Account">
+    <End Role="Account" Type="EmangSampahModel.Store.Accounts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserAccount" Type="EmangSampahModel.Store.Accounts_UserAccount" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="UserAccount">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PartnerAccount_inherits_Account">
+    <End Role="Account" Type="EmangSampahModel.Store.Accounts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PartnerAccount" Type="EmangSampahModel.Store.Accounts_PartnerAccount" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="PartnerAccount">
         <PropertyRef Name="AccountId" />
       </Dependent>
     </ReferentialConstraint>
@@ -48,39 +102,47 @@
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="EmangSampahModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
         <EntityContainer Name="EmangSampahModelContainer1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accounts" EntityType="EmangSampahModel.Account" />
-          <EntitySet Name="Posts" EntityType="EmangSampahModel.Post" />
-          <AssociationSet Name="AccountPost" Association="EmangSampahModel.AccountPost">
+          <EntitySet Name="Posts" EntityType="EmangSampahModel.Posts" />
+          <AssociationSet Name="AccountPosts" Association="EmangSampahModel.AccountPosts">
             <End Role="Account" EntitySet="Accounts" />
-            <End Role="Post" EntitySet="Posts" />
+            <End Role="Posts" EntitySet="Posts" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Account">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="AccountId" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Username" Type="String" Nullable="false" />
           <Property Name="Password" Type="String" Nullable="false" />
-          <NavigationProperty Name="Posts" Relationship="EmangSampahModel.AccountPost" FromRole="Account" ToRole="Post" />
+          <NavigationProperty Name="Posts" Relationship="EmangSampahModel.AccountPosts" FromRole="Account" ToRole="Posts" />
         </EntityType>
-        <EntityType Name="Post">
+        <EntityType Name="UserAccount" BaseType="EmangSampahModel.Account">
+          <Property Name="FirstName" Type="String" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PartnerAccount" BaseType="EmangSampahModel.Account">
+          <Property Name="CompanyName" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Posts">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="PostsId" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Content" Type="String" Nullable="false" />
-          <Property Name="LikesCount" Type="Int16" Nullable="false" />
-          <NavigationProperty Name="Account" Relationship="EmangSampahModel.AccountPost" FromRole="Post" ToRole="Account" />
+          <Property Name="PostsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="Int32" Nullable="false" />
+          <Property Name="LikesCount" Type="String" Nullable="false" />
+          <Property Name="UploadTime" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="EmangSampahModel.AccountPosts" FromRole="Posts" ToRole="Account" />
           <Property Name="AccountId" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="AccountPost">
+        <Association Name="AccountPosts">
           <End Type="EmangSampahModel.Account" Role="Account" Multiplicity="1" />
-          <End Type="EmangSampahModel.Post" Role="Post" Multiplicity="*" />
+          <End Type="EmangSampahModel.Posts" Role="Posts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Account">
-              <PropertyRef Name="Id" />
+              <PropertyRef Name="AccountId" />
             </Principal>
-            <Dependent Role="Post">
+            <Dependent Role="Posts">
               <PropertyRef Name="AccountId" />
             </Dependent>
           </ReferentialConstraint>
@@ -94,18 +156,32 @@
     <EntitySetMapping Name="Accounts">
       <EntityTypeMapping TypeName="IsTypeOf(EmangSampahModel.Account)">
         <MappingFragment StoreEntitySet="Accounts">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Password" ColumnName="Password" />
         </MappingFragment>
       </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(EmangSampahModel.UserAccount)">
+        <MappingFragment StoreEntitySet="Accounts_UserAccount">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(EmangSampahModel.PartnerAccount)">
+        <MappingFragment StoreEntitySet="Accounts_PartnerAccount">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Posts">
-      <EntityTypeMapping TypeName="IsTypeOf(EmangSampahModel.Post)">
+      <EntityTypeMapping TypeName="IsTypeOf(EmangSampahModel.Posts)">
         <MappingFragment StoreEntitySet="Posts">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PostsId" ColumnName="PostsId" />
           <ScalarProperty Name="Content" ColumnName="Content" />
           <ScalarProperty Name="LikesCount" ColumnName="LikesCount" />
+          <ScalarProperty Name="UploadTime" ColumnName="UploadTime" />
           <ScalarProperty Name="AccountId" ColumnName="AccountId" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/25/2023 14:06:21
+-- Date Created: 11/26/2023 14:50:16
 -- Generated from EDMX file: C:\Users\ASUS\source\repos\E-Mang-Sampah\E-Mang Sampah\Model\EmangSampahModel.edmx
 -- --------------------------------------------------
 
@@ -17,8 +17,14 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_AccountPost]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Posts] DROP CONSTRAINT [FK_AccountPost];
+IF OBJECT_ID(N'[dbo].[FK_AccountPosts]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Posts] DROP CONSTRAINT [FK_AccountPosts];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserAccount_inherits_Account]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Accounts_UserAccount] DROP CONSTRAINT [FK_UserAccount_inherits_Account];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PartnerAccount_inherits_Account]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Accounts_PartnerAccount] DROP CONSTRAINT [FK_PartnerAccount_inherits_Account];
 GO
 
 -- --------------------------------------------------
@@ -31,6 +37,12 @@ GO
 IF OBJECT_ID(N'[dbo].[Posts]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Posts];
 GO
+IF OBJECT_ID(N'[dbo].[Accounts_UserAccount]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Accounts_UserAccount];
+GO
+IF OBJECT_ID(N'[dbo].[Accounts_PartnerAccount]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Accounts_PartnerAccount];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -38,7 +50,7 @@ GO
 
 -- Creating table 'Accounts'
 CREATE TABLE [dbo].[Accounts] (
-    [Id] int IDENTITY(1,1) NOT NULL,
+    [AccountId] int IDENTITY(1,1) NOT NULL,
     [Username] nvarchar(max)  NOT NULL,
     [Password] nvarchar(max)  NOT NULL
 );
@@ -46,9 +58,25 @@ GO
 
 -- Creating table 'Posts'
 CREATE TABLE [dbo].[Posts] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Content] nvarchar(max)  NOT NULL,
-    [LikesCount] smallint  NOT NULL,
+    [PostsId] int IDENTITY(1,1) NOT NULL,
+    [Content] int  NOT NULL,
+    [LikesCount] nvarchar(max)  NOT NULL,
+    [UploadTime] datetime  NOT NULL,
+    [AccountId] int  NOT NULL
+);
+GO
+
+-- Creating table 'Accounts_UserAccount'
+CREATE TABLE [dbo].[Accounts_UserAccount] (
+    [FirstName] nvarchar(max)  NOT NULL,
+    [LastName] nvarchar(max)  NOT NULL,
+    [AccountId] int  NOT NULL
+);
+GO
+
+-- Creating table 'Accounts_PartnerAccount'
+CREATE TABLE [dbo].[Accounts_PartnerAccount] (
+    [CompanyName] nvarchar(max)  NOT NULL,
     [AccountId] int  NOT NULL
 );
 GO
@@ -57,16 +85,28 @@ GO
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
 
--- Creating primary key on [Id] in table 'Accounts'
+-- Creating primary key on [AccountId] in table 'Accounts'
 ALTER TABLE [dbo].[Accounts]
 ADD CONSTRAINT [PK_Accounts]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([AccountId] ASC);
 GO
 
--- Creating primary key on [Id] in table 'Posts'
+-- Creating primary key on [PostsId] in table 'Posts'
 ALTER TABLE [dbo].[Posts]
 ADD CONSTRAINT [PK_Posts]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([PostsId] ASC);
+GO
+
+-- Creating primary key on [AccountId] in table 'Accounts_UserAccount'
+ALTER TABLE [dbo].[Accounts_UserAccount]
+ADD CONSTRAINT [PK_Accounts_UserAccount]
+    PRIMARY KEY CLUSTERED ([AccountId] ASC);
+GO
+
+-- Creating primary key on [AccountId] in table 'Accounts_PartnerAccount'
+ALTER TABLE [dbo].[Accounts_PartnerAccount]
+ADD CONSTRAINT [PK_Accounts_PartnerAccount]
+    PRIMARY KEY CLUSTERED ([AccountId] ASC);
 GO
 
 -- --------------------------------------------------
@@ -75,17 +115,35 @@ GO
 
 -- Creating foreign key on [AccountId] in table 'Posts'
 ALTER TABLE [dbo].[Posts]
-ADD CONSTRAINT [FK_AccountPost]
+ADD CONSTRAINT [FK_AccountPosts]
     FOREIGN KEY ([AccountId])
     REFERENCES [dbo].[Accounts]
-        ([Id])
+        ([AccountId])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_AccountPost'
-CREATE INDEX [IX_FK_AccountPost]
+-- Creating non-clustered index for FOREIGN KEY 'FK_AccountPosts'
+CREATE INDEX [IX_FK_AccountPosts]
 ON [dbo].[Posts]
     ([AccountId]);
+GO
+
+-- Creating foreign key on [AccountId] in table 'Accounts_UserAccount'
+ALTER TABLE [dbo].[Accounts_UserAccount]
+ADD CONSTRAINT [FK_UserAccount_inherits_Account]
+    FOREIGN KEY ([AccountId])
+    REFERENCES [dbo].[Accounts]
+        ([AccountId])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [AccountId] in table 'Accounts_PartnerAccount'
+ALTER TABLE [dbo].[Accounts_PartnerAccount]
+ADD CONSTRAINT [FK_PartnerAccount_inherits_Account]
+    FOREIGN KEY ([AccountId])
+    REFERENCES [dbo].[Accounts]
+        ([AccountId])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- --------------------------------------------------

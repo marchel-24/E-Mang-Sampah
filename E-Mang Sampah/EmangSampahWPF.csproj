@@ -50,6 +50,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
@@ -89,9 +90,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmangSampahModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\Post.cs">
+    <Compile Include="Model\PartnerAccount.cs">
       <DependentUpon>EmangSampahModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Posts.cs">
+      <DependentUpon>EmangSampahModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\UserAccount.cs">
+      <DependentUpon>EmangSampahModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Session\SessionData.cs" />
     <Compile Include="Services\Validation\ValidationManager.cs" />
     <Compile Include="Services\Navigation\NavigationManager.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
