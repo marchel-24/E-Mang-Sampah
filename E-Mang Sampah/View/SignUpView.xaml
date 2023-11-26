@@ -107,7 +107,7 @@
                 <StackPanel Width="250"
                         Grid.Row="1"
                         Orientation="Vertical"
-                        Margin="0,35,0,10">
+                        Margin="0,20,0,10">
                     <Image Source="/Images/Logo.png"
                                    Width="75"
                                    Height="75"

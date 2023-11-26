@@ -107,7 +107,7 @@
                 <StackPanel Width="250"
                         Grid.Row="1"
                         Orientation="Vertical"
-                        Margin="0,35,0,10">
+                        Margin="0,20,0,10">
                     <Image Source="/Images/Logo.png"
                                    Width="75"
                                    Height="75"
@@ -154,12 +154,39 @@
                         </TextBox.Background>
                     </TextBox>
 
+                    <TextBlock Text="Username"
+                           FontFamily="Gilroy"
+                           FontWeight="SemiBold"
+                           FontSize="13"
+                           Foreground="{StaticResource titleColor1}"
+                           Margin="0,5,0,0"
+                           />
+
+                    <TextBox x:Name="TxtUsername"
+                          FontSize="11"
+                          FontWeight="Medium"
+                          FontFamily="Gilroy"
+                          Foreground="{StaticResource titleColor1}"
+                          CaretBrush="{StaticResource ObjColor1}"
+                          BorderBrush="{StaticResource BorderColor1}"
+                          BorderThickness="0,0,0,2"
+                          Height="28"
+                          VerticalContentAlignment="Center"
+                          Margin="0,5,0,0"
+                         Padding="28,0,0,0">
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Images/user.png"
+                            Stretch="Uniform"
+                            AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+
                     <TextBlock Text="Password"
                                        FontFamily="Gilroy"
                                        FontWeight="SemiBold"
                                        FontSize="13"
                                        Foreground="{StaticResource titleColor1}"
-                                       Margin="0,20,0,0"
+                                       Margin="0,10,0,0"
                                        />
                     <PasswordBox x:Name="TxtPassword"
                                      FontSize="11"
