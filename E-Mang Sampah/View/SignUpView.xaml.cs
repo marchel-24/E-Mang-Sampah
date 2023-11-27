@@ -46,11 +46,15 @@ namespace E_Mang_Sampah.View
 
         private void BtnSignUp_Click(object sender, RoutedEventArgs e)
         {
-            string username = TxtFistname.Text;
+            string firstName = TxtFirstname.Text;
+            string lastName = TxtLastname.Text;
+            string username = TxtUsername.Text;
             string password = TxtPassword.Password;
-            var acc = new Account { Username = username, Password = password };
-            db.Accounts.Add(acc);
+            var userAcc = new UserAccount { FirstName = firstName, LastName = lastName, Username = username, Password = password };
+            db.Accounts.Add(userAcc);
             db.SaveChanges();
+            MessageBox.Show("Sign Up Succeeded", "Sign Up");
+            navigationManager.NavigateWindow(new LoginView());
         }
         private void BtnLogin2_Click(object sender, RoutedEventArgs e)
         {

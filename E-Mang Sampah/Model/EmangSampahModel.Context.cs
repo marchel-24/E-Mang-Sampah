@@ -27,5 +27,6 @@ namespace E_Mang_Sampah.Model
     
         public virtual DbSet<Account> Accounts { get; set; }
         public virtual DbSet<Posts> Posts { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
     }
 }

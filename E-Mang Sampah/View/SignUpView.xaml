@@ -127,7 +127,7 @@
                                        Foreground="{StaticResource titleColor1}"
                                        HorizontalAlignment="Center"
                                        Margin="0,10,0,0"/>
-                    <TextBlock Text="Fist name"
+                    <TextBlock Text="First name"
                                        FontFamily="Gilroy"
                                        FontWeight="SemiBold"
                                        FontSize="13"
@@ -135,7 +135,7 @@
                                        Margin="0,10,0,0"
                                        />
 
-                    <TextBox x:Name="TxtFistname"
+                    <TextBox x:Name="TxtFirstname"
                                       FontSize="11"
                                       FontWeight="Medium"
                                       FontFamily="Gilroy"

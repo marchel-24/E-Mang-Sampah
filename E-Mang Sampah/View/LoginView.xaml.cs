@@ -18,6 +18,7 @@ using E_Mang_Sampah;
 using E_Mang_Sampah.Model;
 using E_Mang_Sampah.Services.Authentication;
 using E_Mang_Sampah.Services.Navigation;
+using E_Mang_Sampah.Services.Session;
 using E_Mang_Sampah.View;
 
 namespace WpfApp1
@@ -30,6 +31,7 @@ namespace WpfApp1
         EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
         NavigationManager navigationManager;
         ValidationManager validationManager;
+
         public LoginView()
         {
             InitializeComponent();
@@ -55,11 +57,22 @@ namespace WpfApp1
         {
             if (validationManager.Validate(TxtUsername.Text, TxtPassword.Password))
             {
-                navigationManager.NavigateWindow(new MainWindow());
+                if(db.Accounts.OfType<UserAccount>().Where(r => r.Username == TxtUsername.Text).Count() > 0)
+                {
+                    SessionData.CurrentAccount = db.Accounts.OfType<UserAccount>().FirstOrDefault(r => r.Username == TxtUsername.Text);
+                    MessageBox.Show("Login Succeeded", "Login");
+                    navigationManager.NavigateWindow(new MainWindow());
+                }
+                else if (db.Accounts.OfType<PartnerAccount>().Where(r => r.Username == TxtUsername.Text).Count() > 0)
+                {
+                    SessionData.CurrentAccount = db.Accounts.OfType<PartnerAccount>().FirstOrDefault(r => r.Username == TxtUsername.Text);
+                    MessageBox.Show("Login Succeeded", "Login");
+                    navigationManager.NavigateWindow(new MainWindow());
+                }
             }
             else
             {
-                MessageBox.Show("Invalid");
+                MessageBox.Show("Invalid", "Login");
             }
         }
 

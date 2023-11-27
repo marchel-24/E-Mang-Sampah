@@ -158,6 +158,9 @@
                             <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
                             
                         </Button>
+                        <StackPanel Width="100">
+                            <TextBlock x:Name="NameLabel" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
 
                     </StackPanel>
                            

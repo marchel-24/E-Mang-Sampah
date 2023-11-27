@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/26/2023 14:50:16
+-- Date Created: 11/27/2023 08:37:32
 -- Generated from EDMX file: C:\Users\ASUS\source\repos\E-Mang-Sampah\E-Mang Sampah\Model\EmangSampahModel.edmx
 -- --------------------------------------------------
 
@@ -66,6 +66,15 @@ CREATE TABLE [dbo].[Posts] (
 );
 GO
 
+-- Creating table 'Orders'
+CREATE TABLE [dbo].[Orders] (
+    [OrderId] int IDENTITY(1,1) NOT NULL,
+    [UserAccountId] int  NOT NULL,
+    [PartnerAccountId] int  NOT NULL,
+    [OrderReqTime] datetime  NOT NULL
+);
+GO
+
 -- Creating table 'Accounts_UserAccount'
 CREATE TABLE [dbo].[Accounts_UserAccount] (
     [FirstName] nvarchar(max)  NOT NULL,
@@ -97,6 +106,12 @@ ADD CONSTRAINT [PK_Posts]
     PRIMARY KEY CLUSTERED ([PostsId] ASC);
 GO
 
+-- Creating primary key on [OrderId] in table 'Orders'
+ALTER TABLE [dbo].[Orders]
+ADD CONSTRAINT [PK_Orders]
+    PRIMARY KEY CLUSTERED ([OrderId] ASC);
+GO
+
 -- Creating primary key on [AccountId] in table 'Accounts_UserAccount'
 ALTER TABLE [dbo].[Accounts_UserAccount]
 ADD CONSTRAINT [PK_Accounts_UserAccount]
@@ -126,6 +141,36 @@ GO
 CREATE INDEX [IX_FK_AccountPosts]
 ON [dbo].[Posts]
     ([AccountId]);
+GO
+
+-- Creating foreign key on [UserAccountId] in table 'Orders'
+ALTER TABLE [dbo].[Orders]
+ADD CONSTRAINT [FK_UserAccountOrder]
+    FOREIGN KEY ([UserAccountId])
+    REFERENCES [dbo].[Accounts_UserAccount]
+        ([AccountId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserAccountOrder'
+CREATE INDEX [IX_FK_UserAccountOrder]
+ON [dbo].[Orders]
+    ([UserAccountId]);
+GO
+
+-- Creating foreign key on [PartnerAccountId] in table 'Orders'
+ALTER TABLE [dbo].[Orders]
+ADD CONSTRAINT [FK_PartnerAccountOrder]
+    FOREIGN KEY ([PartnerAccountId])
+    REFERENCES [dbo].[Accounts_PartnerAccount]
+        ([AccountId])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PartnerAccountOrder'
+CREATE INDEX [IX_FK_PartnerAccountOrder]
+ON [dbo].[Orders]
+    ([PartnerAccountId]);
 GO
 
 -- Creating foreign key on [AccountId] in table 'Accounts_UserAccount'

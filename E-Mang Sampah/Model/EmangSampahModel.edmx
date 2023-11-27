@@ -8,11 +8,20 @@
   <EntityContainer Name="EmangSampahModelStoreContainer">
     <EntitySet Name="Accounts" EntityType="EmangSampahModel.Store.Accounts" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Posts" EntityType="EmangSampahModel.Store.Posts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Orders" EntityType="EmangSampahModel.Store.Orders" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Accounts_UserAccount" EntityType="EmangSampahModel.Store.Accounts_UserAccount" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Accounts_PartnerAccount" EntityType="EmangSampahModel.Store.Accounts_PartnerAccount" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="AccountPosts" Association="EmangSampahModel.Store.AccountPosts">
       <End Role="Account" EntitySet="Accounts" />
       <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="UserAccountOrder" Association="EmangSampahModel.Store.UserAccountOrder">
+      <End Role="UserAccount" EntitySet="Accounts_UserAccount" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="PartnerAccountOrder" Association="EmangSampahModel.Store.PartnerAccountOrder">
+      <End Role="PartnerAccount" EntitySet="Accounts_PartnerAccount" />
+      <End Role="Order" EntitySet="Orders" />
     </AssociationSet>
     <AssociationSet Name="FK_UserAccount_inherits_Account" Association="EmangSampahModel.Store.FK_UserAccount_inherits_Account">
       <End Role="Account" EntitySet="Accounts" />
@@ -41,6 +50,15 @@
     <Property Name="UploadTime" Type="datetime" Nullable="false" />
     <Property Name="AccountId" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserAccountId" Type="int" Nullable="false" />
+    <Property Name="PartnerAccountId" Type="int" Nullable="false" />
+    <Property Name="OrderReqTime" Type="datetime" Nullable="false" />
+  </EntityType>
   <EntityType Name="Accounts_UserAccount">
     <Key>
       <PropertyRef Name="AccountId" />
@@ -65,6 +83,30 @@
       </Principal>
       <Dependent Role="Posts">
         <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserAccountOrder">
+    <End Role="UserAccount" Type="EmangSampahModel.Store.Accounts_UserAccount" Multiplicity="1" />
+    <End Role="Order" Type="EmangSampahModel.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="UserAccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PartnerAccountOrder">
+    <End Role="PartnerAccount" Type="EmangSampahModel.Store.Accounts_PartnerAccount" Multiplicity="1" />
+    <End Role="Order" Type="EmangSampahModel.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PartnerAccount">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="PartnerAccountId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -107,6 +149,15 @@
             <End Role="Account" EntitySet="Accounts" />
             <End Role="Posts" EntitySet="Posts" />
           </AssociationSet>
+          <EntitySet Name="Orders" EntityType="EmangSampahModel.Order" />
+          <AssociationSet Name="UserAccountOrder" Association="EmangSampahModel.UserAccountOrder">
+            <End Role="UserAccount" EntitySet="Accounts" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="PartnerAccountOrder" Association="EmangSampahModel.PartnerAccountOrder">
+            <End Role="PartnerAccount" EntitySet="Accounts" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Account">
           <Key>
@@ -120,9 +171,11 @@
         <EntityType Name="UserAccount" BaseType="EmangSampahModel.Account">
           <Property Name="FirstName" Type="String" Nullable="false" />
           <Property Name="LastName" Type="String" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="EmangSampahModel.UserAccountOrder" FromRole="UserAccount" ToRole="Order" />
         </EntityType>
         <EntityType Name="PartnerAccount" BaseType="EmangSampahModel.Account">
           <Property Name="CompanyName" Type="String" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="EmangSampahModel.PartnerAccountOrder" FromRole="PartnerAccount" ToRole="Order" />
         </EntityType>
         <EntityType Name="Posts">
           <Key>
@@ -144,6 +197,41 @@
             </Principal>
             <Dependent Role="Posts">
               <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="UserAccount" Relationship="EmangSampahModel.UserAccountOrder" FromRole="Order" ToRole="UserAccount" />
+          <Property Name="UserAccountId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PartnerAccount" Relationship="EmangSampahModel.PartnerAccountOrder" FromRole="Order" ToRole="PartnerAccount" />
+          <Property Name="PartnerAccountId" Type="Int32" Nullable="false" />
+          <Property Name="OrderReqTime" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <Association Name="UserAccountOrder">
+          <End Type="EmangSampahModel.UserAccount" Role="UserAccount" Multiplicity="1" />
+          <End Type="EmangSampahModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="UserAccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PartnerAccountOrder">
+          <End Type="EmangSampahModel.PartnerAccount" Role="PartnerAccount" Multiplicity="1" />
+          <End Type="EmangSampahModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PartnerAccount">
+              <PropertyRef Name="AccountId" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="PartnerAccountId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -183,6 +271,16 @@
           <ScalarProperty Name="LikesCount" ColumnName="LikesCount" />
           <ScalarProperty Name="UploadTime" ColumnName="UploadTime" />
           <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="IsTypeOf(EmangSampahModel.Order)">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="UserAccountId" ColumnName="UserAccountId" />
+          <ScalarProperty Name="PartnerAccountId" ColumnName="PartnerAccountId" />
+          <ScalarProperty Name="OrderReqTime" ColumnName="OrderReqTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

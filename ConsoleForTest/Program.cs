@@ -19,14 +19,14 @@ namespace ConsoleForTest
             //user.FirstName = "Test9";
             //user.LastName = "Test10";
 
-            Posts posts = new Posts();
-            posts.Account = db.Accounts.Find(3);
-            posts.Content = 12345;
-            posts.LikesCount = "testLagiBos";
-            posts.UploadTime = DateTime.Now;
+            //Posts posts = new Posts();
+            //posts.Account = db.Accounts.Find(3);
+            //posts.Content = 12345;
+            //posts.LikesCount = "testLagiBos";
+            //posts.UploadTime = DateTime.Now;
             //db.Accounts.Add(user);
-            db.Posts.Add(posts);
-            db.SaveChanges();
+            //db.Posts.Add(posts);
+            //db.SaveChanges();
 
             //var account = db.Accounts.ToList();
             //foreach (var acc in account)
@@ -38,6 +38,10 @@ namespace ConsoleForTest
             //    Console.WriteLine();
             //    Console.ReadLine();
             //}
+
+            //var account = db.Accounts.OfType<UserAccount>().w;
+            //Console.WriteLine(account);
+            //Console.ReadLine();
         }
     }
 }

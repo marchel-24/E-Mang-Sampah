@@ -51,7 +51,13 @@ namespace E_Mang_Sampah.View
 
         private void BtnSignUp_Click(object sender, RoutedEventArgs e)
         {
-
+            string companyName = TxtCompanyName.Text;
+            string username = TxtUsername.Text;
+            string password = TxtPassword.Password;
+            var companyAcc = new PartnerAccount { CompanyName = companyName, Username = username, Password = password };
+            db.Accounts.Add(companyAcc);
+            db.SaveChanges();
+            MessageBox.Show("Sign Up Succeeded", "Sign Up");
             navigationManager.NavigateWindow(new LoginView());
         }
     }

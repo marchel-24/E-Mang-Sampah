@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Runtime.InteropServices;    
 using System.Windows.Interop;
+using E_Mang_Sampah.Model;
+using E_Mang_Sampah.Services.Session;
 
 namespace E_Mang_Sampah
 {
@@ -26,6 +28,7 @@ namespace E_Mang_Sampah
         public MainWindow()
         {
             InitializeComponent();
+            SetTextInCodeBehind();
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
         [DllImport("user32.dll")]
@@ -35,6 +38,18 @@ namespace E_Mang_Sampah
         private void Btn_Menu_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void SetTextInCodeBehind()
+        {
+            if(SessionData.CurrentAccount is PartnerAccount)
+            {
+                NameLabel.Text = ((PartnerAccount)SessionData.CurrentAccount).CompanyName;
+            }
+            else if(SessionData.CurrentAccount is UserAccount)
+            {
+                NameLabel.Text = ((UserAccount)SessionData.CurrentAccount).FirstName + " " + ((UserAccount)SessionData.CurrentAccount).LastName;
+            }
         }
 
         private void BtnClosed_Click(object sender, RoutedEventArgs e)
@@ -63,5 +78,7 @@ namespace E_Mang_Sampah
         {
             this.WindowState = WindowState.Minimized;
         }
+
+        
     }
 }

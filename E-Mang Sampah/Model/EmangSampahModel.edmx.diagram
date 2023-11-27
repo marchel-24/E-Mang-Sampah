@@ -12,6 +12,9 @@
         <InheritanceConnector EntityType="EmangSampahModel.PartnerAccount" />
         <EntityTypeShape EntityType="EmangSampahModel.Posts" Width="1.5" PointX="7.375" PointY="1.375" />
         <AssociationConnector Association="EmangSampahModel.AccountPosts" />
+        <EntityTypeShape EntityType="EmangSampahModel.Order" Width="1.5" PointX="4.375" PointY="6.625" />
+        <AssociationConnector Association="EmangSampahModel.UserAccountOrder" />
+        <AssociationConnector Association="EmangSampahModel.PartnerAccountOrder" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

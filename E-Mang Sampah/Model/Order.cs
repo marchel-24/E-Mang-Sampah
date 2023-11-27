@@ -12,17 +12,14 @@ namespace E_Mang_Sampah.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class PartnerAccount : Account
+    public partial class Order
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PartnerAccount()
-        {
-            this.Orders = new HashSet<Order>();
-        }
+        public int OrderId { get; set; }
+        public int UserAccountId { get; set; }
+        public int PartnerAccountId { get; set; }
+        public System.DateTime OrderReqTime { get; set; }
     
-        public string CompanyName { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
+        public virtual UserAccount UserAccount { get; set; }
+        public virtual PartnerAccount PartnerAccount { get; set; }
     }
 }
