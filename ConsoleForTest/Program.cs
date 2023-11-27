@@ -28,8 +28,8 @@ namespace ConsoleForTest
             //db.Posts.Add(posts);
             //db.SaveChanges();
 
-            //var account = db.Accounts.ToList();
-            //foreach (var acc in account)
+            //var account = db.Accounts.ToList().First(r => r.Username == "EdoBagus");
+            ////foreach (var acc in account)
             //{
             //    Console.WriteLine(acc.AccountId);
             //    Console.WriteLine(acc.Username);

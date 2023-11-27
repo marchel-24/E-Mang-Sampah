@@ -159,7 +159,10 @@
                             
                         </Button>
                         <StackPanel Width="100">
-                            <TextBlock x:Name="NameLabel" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="NameLabel" 
+                                       HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center"
+                                       Margin="0, 7, 0, 0"/>
                         </StackPanel>
 
                     </StackPanel>
