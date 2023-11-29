@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace E_Mang_Sampah.Services.Session
 {
@@ -21,6 +22,14 @@ namespace E_Mang_Sampah.Services.Session
         {
             get { return _currentAccount; }
             set { _currentAccount = value; }
+        }
+
+        private static Window _currentWindow;
+
+        public static Window CurrentWindow
+        {
+            get { return _currentWindow; }
+            set { _currentWindow = value; }
         }
     }
 }

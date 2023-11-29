@@ -29,6 +29,7 @@ namespace E_Mang_Sampah
         {
             InitializeComponent();
             SetTextInCodeBehind();
+            SessionData.CurrentWindow = this;
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
         [DllImport("user32.dll")]
@@ -48,14 +49,16 @@ namespace E_Mang_Sampah
             }
             else if(SessionData.CurrentAccount is UserAccount)
             {
-                NameLabel.Text = ((UserAccount)SessionData.CurrentAccount).FirstName + " " + ((UserAccount)SessionData.CurrentAccount).LastName;
+                NameLabel.Text = ((UserAccount)SessionData.CurrentAccount).GetFullName();
             }
         }
 
+        //Closed app when button clicked
         private void BtnClosed_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
+
         private void pnlControlBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
            WindowInteropHelper helper= new WindowInteropHelper(this);

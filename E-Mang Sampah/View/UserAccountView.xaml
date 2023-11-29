@@ -53,7 +53,9 @@
                 Margin="10, 0, 0,0"
                 
                 >
-                <TextBox TextWrapping="Wrap" 
+                <TextBox 
+                 x:Name = "FirstNameLabel"
+                 TextWrapping="Wrap" 
                  Width="600"
                  TextAlignment="Left" 
                  Background="Transparent" 
@@ -80,7 +82,9 @@
     Margin="10, 0, 0,0"
     
     >
-                <TextBox TextWrapping="Wrap" 
+                <TextBox 
+                    x:Name="LastNameLabel"
+                    TextWrapping="Wrap" 
      Width="600"
      TextAlignment="Left" 
      Background="Transparent" 
@@ -92,7 +96,7 @@
             <StackPanel Grid.Row="6"
     Margin="5, 0, 0, 0"
     VerticalAlignment="Center">
-                <TextBlock Text="UserName"
+                <TextBlock Text="Username"
        FontSize="18"
        FontFamily="Gilroy"
        FontWeight="DemiBold"
@@ -107,7 +111,9 @@
     Margin="10, 0, 0,0"
     
     >
-                <TextBox TextWrapping="Wrap" 
+                <TextBox 
+                    x:Name="UsernameLabel"
+                    TextWrapping="Wrap" 
      Width="600"
      TextAlignment="Left" 
      Background="Transparent" 
@@ -119,7 +125,7 @@
             <StackPanel Grid.Row="8"
 Margin="5, 0, 0, 0"
 VerticalAlignment="Center">
-                <TextBlock Text="UserName"
+                <TextBlock Text="Password"
    FontSize="18"
    FontFamily="Gilroy"
    FontWeight="DemiBold"
@@ -134,7 +140,9 @@ HorizontalAlignment="Left"
 Margin="10, 0, 0,0"
 
 >
-                <TextBox TextWrapping="Wrap" 
+                <TextBox 
+                    x:Name="PasswordLabel"
+                    TextWrapping="Wrap" 
  Width="600"
  TextAlignment="Left" 
  Background="Transparent" 
@@ -157,7 +165,7 @@ Margin="10, 0, 0,0"
                         Width="92"
                         Background="#FFE20F0F" 
                         Foreground="White"
-                        Margin="0,0,10,2">
+                        Margin="0,0,10,2" Click="btnDelete_Click">
                 </Button>
 
                 <Button x:Name="btnCancel"
@@ -166,7 +174,7 @@ Margin="10, 0, 0,0"
                         Width="92"
                         Background="#FFC0C8D8" 
                         Foreground="#FF236075"
-                        Margin="0,0,10,2">
+                        Margin="0,0,10,2" Click="btnCancel_Click">
                 </Button>
 
                 <Button x:Name="btnUpdate"
@@ -175,7 +183,7 @@ Margin="10, 0, 0,0"
                         Width="92"
                         Background="#FF236075"
                         Foreground="#FFC0C8D8"
-                        Margin="0,0,10,2">
+                        Margin="0,0,10,2" Click="btnUpdate_Click">
                 </Button>
 
             </StackPanel>
