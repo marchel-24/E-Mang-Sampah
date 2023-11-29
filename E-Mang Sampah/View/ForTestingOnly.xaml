@@ -8,6 +8,19 @@
         mc:Ignorable="d"
         Title="ForTestingOnly" Height="450" Width="800">
     <Grid>
-        <m:Map Name="BingMap" CredentialsProvider="Ukvn2x9fOIi94SdkUHg3~9wMsqEevY0pBK0FXcu7a4w~AtShfaln4nbX5fauwr5cQq8u2iZVFWj8xGijPvKbetae5Hu0JJEiH_xbFtVROl76" />
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <m:Map Name="BingMap" CredentialsProvider="Ukvn2x9fOIi94SdkUHg3~9wMsqEevY0pBK0FXcu7a4w~AtShfaln4nbX5fauwr5cQq8u2iZVFWj8xGijPvKbetae5Hu0JJEiH_xbFtVROl76"
+       Margin="5,10,5,5"
+       Height="250"
+       Center="-7.771317095452585, 110.37772145337762"
+       ZoomLevel="18"
+       VerticalAlignment="Top"
+       Grid.Row="0"/>
     </Grid>
 </Window>

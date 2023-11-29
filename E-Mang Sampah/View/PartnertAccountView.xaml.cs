@@ -10,18 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace E_Mang_Sampah.View
 {
     /// <summary>
-    /// Interaction logic for PartnerAccountPage.xaml
+    /// Interaction logic for UserAccount.xaml
     /// </summary>
-    public partial class PartnerAccountPage : Window
+    public partial class PartnerAccountView : UserControl
     {
-        public PartnerAccountPage()
+        public PartnerAccountView()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

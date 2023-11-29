@@ -108,6 +108,13 @@
     <Compile Include="Services\Session\SessionData.cs" />
     <Compile Include="Services\Validation\ValidationManager.cs" />
     <Compile Include="Services\Navigation\NavigationManager.cs" />
+    <Compile Include="ViewModel\JunkPickModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\PartnerAccountModel.cs" />
+    <Compile Include="ViewModel\Test2Model.cs" />
+    <Compile Include="ViewModel\UserAccountViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\ViewModelCommand.cs" />
     <Compile Include="View\Company_SignUp.xaml.cs">
       <DependentUpon>Company_SignUp.xaml</DependentUpon>
     </Compile>
@@ -122,6 +129,18 @@
     </Compile>
     <Compile Include="View\SignUpView.xaml.cs">
       <DependentUpon>SignUpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Test.xaml.cs">
+      <DependentUpon>Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Test2.xaml.cs">
+      <DependentUpon>Test2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PartnertAccountView.xaml.cs">
+      <DependentUpon>PartnertAccountView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserAccountView.xaml.cs">
+      <DependentUpon>UserAccountView.xaml</DependentUpon>
     </Compile>
     <Page Include="Styles\ButtonColor.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -160,6 +179,22 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\SignUpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Test2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PartnertAccountView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserAccountView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

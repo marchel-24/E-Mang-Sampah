@@ -16,6 +16,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Interop;
 using E_Mang_Sampah.Model;
 using E_Mang_Sampah.Services.Session;
+using E_Mang_Sampah.ViewModel;
 
 namespace E_Mang_Sampah
 {

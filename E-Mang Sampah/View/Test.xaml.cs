@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace E_Mang_Sampah.View
 {
     /// <summary>
-    /// Interaction logic for UserAccountPage.xaml
+    /// Interaction logic for Test.xaml
     /// </summary>
-    public partial class UserAccountPage : Window
+    public partial class Test : UserControl
     {
-        public UserAccountPage()
+        public Test()
         {
             InitializeComponent();
         }

@@ -3,8 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:E_Mang_Sampah"
+        xmlns:local="clr-namespace:E_Mang_Sampah.View"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:viewModel="clr-namespace:E_Mang_Sampah.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
@@ -12,7 +13,23 @@
         Background="Transparent"
         AllowsTransparency="True">
 
-    <Border CornerRadius="10"
+    <Window.DataContext>
+        <viewModel:MainViewModel x:Name="Modeldel"/>
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:JunkPickModel}">
+            <local:Test/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:PartnerAccountModel}">
+            <local:PartnerAccountView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:UserAccountViewModel}">
+            <local:UserAccountView/>
+        </DataTemplate>
+    </Window.Resources>
+    
+        <Border CornerRadius="10"
             BorderThickness="0.1">
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -76,16 +93,18 @@
                             </Button>
                         </StackPanel>
 
+                        <!--Button Menu-->
                         <RadioButton Style="{StaticResource menuButton}"
-                                     Tag="{StaticResource ButtonColor1}">
+                                     Tag="{StaticResource ButtonColor1}"
+                                     Command="{Binding ShowTestViewCommand}">
                             <StackPanel Orientation="Horizontal">
-                                <fa:IconImage Icon="MapMarkedAlt" Style="{StaticResource menuButtonIcon}"/>
+                                <fa:IconImage Icon="MapPin" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="JunkPick" Style="{StaticResource menuButtonText}"/>
                             </StackPanel>
                         </RadioButton>
 
                         <RadioButton Style="{StaticResource menuButton}"
-                            Tag="{StaticResource ButtonColor1}">
+                                     Tag="{StaticResource ButtonColor1}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="CommentAlt" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Community" Style="{StaticResource menuButtonText}"/>
@@ -101,7 +120,8 @@
                         </RadioButton>
 
                         <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource ButtonColor1}">
+                             Tag="{StaticResource ButtonColor1}"
+                                     Command="{Binding ShowPartnerAccountCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="Person" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Account" Style="{StaticResource menuButtonText}"/>
@@ -166,8 +186,10 @@
                         </StackPanel>
 
                     </StackPanel>
-                           
-                    
+
+                    <ContentControl Content="{Binding CurrentChildView}"
+                                    Grid.Row="1"/>
+  
                 </Grid>
             </Border>
         </Grid>
