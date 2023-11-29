@@ -26,7 +26,8 @@
             <StackPanel Grid.Row="1"
                 Margin="5, 0, 0, 0"
                 VerticalAlignment="Center">
-                <TextBlock Text="Hello, Marcel"
+                <TextBlock 
+                    x:Name="NameLabel"
                    FontSize="24"
                    FontFamily="Gilroy"
                    FontWeight="DemiBold"

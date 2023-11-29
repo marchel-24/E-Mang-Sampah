@@ -1,4 +1,6 @@
-﻿using System;
+﻿using E_Mang_Sampah.Model;
+using E_Mang_Sampah.Services.Session;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,19 @@ namespace E_Mang_Sampah.View
         public UserAccountView()
         {
             InitializeComponent();
+            SetTextInCodeBehind();
+        }
+
+        private void SetTextInCodeBehind()
+        {
+            if (SessionData.CurrentAccount is PartnerAccount)
+            {
+                NameLabel.Text = "Hello, " + ((PartnerAccount)SessionData.CurrentAccount).CompanyName;
+            }
+            else if (SessionData.CurrentAccount is UserAccount)
+            {
+                NameLabel.Text = "Hello, " + ((UserAccount)SessionData.CurrentAccount).FirstName + " " + ((UserAccount)SessionData.CurrentAccount).LastName;
+            }
         }
     }
 }

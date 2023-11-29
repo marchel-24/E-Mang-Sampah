@@ -42,6 +42,24 @@ namespace ConsoleForTest
             //var account = db.Accounts.OfType<UserAccount>().w;
             //Console.WriteLine(account);
             //Console.ReadLine();
+
+            //Order order = new Order();
+            //UserAccount account = db.Accounts.OfType<UserAccount>().First(r => r.FirstName == "Edo");
+            PartnerAccount partnerAccount = db.Accounts.OfType<PartnerAccount>().First(r => r.CompanyName == "TrashCorp");
+            //order.UserAccount = account;
+            //order.PartnerAccount = partnerAccount;
+            //order.OrderReqTime = DateTime.Now;
+
+            //db.Orders.Add(order);
+            //db.SaveChanges();
+            //Console.ReadLine();
+
+            var order = partnerAccount.Orders.First(r => r.OrderId == 2);
+            Console.WriteLine(order.UserAccount.FirstName);
+            Console.ReadLine();
+
+            //Posts post = new Posts();
+            //post.addLikes();
         }
     }
 }
