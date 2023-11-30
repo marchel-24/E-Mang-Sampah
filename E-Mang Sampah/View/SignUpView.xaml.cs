@@ -50,6 +50,15 @@ namespace E_Mang_Sampah.View
             string lastName = TxtLastname.Text;
             string username = TxtUsername.Text;
             string password = TxtPassword.Password;
+            if (db.Accounts.Where(r => r.Username == username).Count() > 0)
+            {
+                MessageBox.Show("Username has already been taken", "Invalid");
+                TxtFirstname.Text = "";
+                TxtLastname.Text = "";
+                TxtUsername.Text = "";
+                TxtPassword.Password = "";
+                return;
+            }
             var userAcc = new UserAccount { FirstName = firstName, LastName = lastName, Username = username, Password = password };
             db.Accounts.Add(userAcc);
             db.SaveChanges();

@@ -54,6 +54,14 @@ namespace E_Mang_Sampah.View
             string companyName = TxtCompanyName.Text;
             string username = TxtUsername.Text;
             string password = TxtPassword.Password;
+            if (db.Accounts.Where(r => r.Username == username).Count() > 0)
+            {
+                MessageBox.Show("Username has already been taken", "Invalid");
+                TxtCompanyName.Text = "";
+                TxtUsername.Text = "";
+                TxtPassword.Password = "";
+                return;
+            }
             var companyAcc = new PartnerAccount { CompanyName = companyName, Username = username, Password = password };
             db.Accounts.Add(companyAcc);
             db.SaveChanges();
