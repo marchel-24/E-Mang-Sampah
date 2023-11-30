@@ -29,11 +29,13 @@ namespace E_Mang_Sampah.ViewModel
 
         public ICommand ShowMainViewCommand { get; }
         public ICommand ShowAccountCommand { get; }
+        public ICommand ShowJunkPickUserCommand { get; }
 
         public MainViewModel()
         {
             ShowMainViewCommand = new ViewModelCommand(ExecuteShowTestView);
             ShowAccountCommand = new ViewModelCommand(ExecuteAccountView);
+            ShowJunkPickUserCommand = new ViewModelCommand(ExecuteJunkPickView);
 
 
             ExecuteShowTestView(null);    
@@ -57,5 +59,16 @@ namespace E_Mang_Sampah.ViewModel
             }
         }
         
+        private void ExecuteJunkPickView(object obj)
+        {
+            if (SessionData.CurrentAccount is PartnerAccount)
+            {
+                //isi ChildView buat Partner
+            }
+            else if (SessionData.CurrentAccount is UserAccount)
+            {    
+                CurrentChildView = new JunkPickUserModel();
+            }
+        }
     }
 }

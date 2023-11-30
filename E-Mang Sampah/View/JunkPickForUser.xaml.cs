@@ -1,4 +1,6 @@
-﻿using System;
+﻿using E_Mang_Sampah.Model;
+using E_Mang_Sampah.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +22,29 @@ namespace E_Mang_Sampah.View
     /// </summary>
     public partial class JunkPickForUser : UserControl
     {
+        EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
+
         public JunkPickForUser()
         {
             InitializeComponent();
+            foreach (var partnerAccount in db.Accounts.OfType<PartnerAccount>())
+            {
+                MenuItem menuItem = new MenuItem();
+                menuItem.Header = partnerAccount.CompanyName;
+                menuItem.Click += PartnersMenuItem_Click;
+                PartnerMenu.Items.Add(menuItem);
+            }
         }
 
-        private void BtnOrderForUser_Click(object sender, RoutedEventArgs e)
+        private void PartnersMenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+            if (sender is MenuItem clickedMenuItem)
+            {
+                PartnerMenu.Header = clickedMenuItem.Header;
+            }
         }
+
+
+
     }
 }

@@ -80,7 +80,7 @@
                             <Button x:Name="Btn_Menu"
                                     Background="Transparent"
                                     BorderBrush="Transparent" Width="137"
-                                    Click="Btn_Menu_Click">
+                                    Command="{Binding ShowMainViewCommand}">
                                 <Button.Effect>
                                     <DropShadowEffect BlurRadius="10" Color="Black" Direction="270" ShadowDepth="1" Opacity="0.3"/>
                                 </Button.Effect>
@@ -99,7 +99,7 @@
                         <!--Button Menu-->
                         <RadioButton Style="{StaticResource menuButton}"
                                      Tag="{StaticResource ButtonColor1}"
-                                     Command="{Binding ShowTestViewCommand}">
+                                     Command="{Binding ShowJunkPickUserCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="MapPin" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="JunkPick" Style="{StaticResource menuButtonText}"/>

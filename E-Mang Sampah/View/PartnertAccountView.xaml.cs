@@ -54,6 +54,7 @@ namespace E_Mang_Sampah.View
             db.SaveChanges();
             SessionData.CurrentAccount = editAccount;
             ((MainWindow)SessionData.CurrentWindow).SetTextInCodeBehind();
+            SetTextInCodeBehind();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

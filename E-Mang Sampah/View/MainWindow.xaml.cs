@@ -35,12 +35,6 @@ namespace E_Mang_Sampah
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage(IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-
-        private void Btn_Menu_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         public void SetTextInCodeBehind()
         {
             if(SessionData.CurrentAccount is PartnerAccount)
