@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_Mang_Sampah.ViewModel
 {
-    public class JunkPickModel : ViewModelBase
+    public class WelcomeViewModel : ViewModelBase
     {
     }
 }

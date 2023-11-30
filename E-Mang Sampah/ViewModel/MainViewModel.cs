@@ -41,7 +41,7 @@ namespace E_Mang_Sampah.ViewModel
 
         private void ExecuteShowTestView(object obj) 
         {
-            CurrentChildView = new JunkPickModel();
+            CurrentChildView = new WelcomeViewModel();
         }
 
         private void ExecutePartnerAccountView(object obj)

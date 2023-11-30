@@ -18,7 +18,7 @@
     </Window.DataContext>
     
     <Window.Resources>
-        <DataTemplate DataType="{x:Type viewModel:JunkPickModel}">
+        <DataTemplate DataType="{x:Type viewModel:WelcomeViewModel}">
             <local:Test/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:PartnerAccountModel}">
@@ -26,6 +26,9 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:UserAccountViewModel}">
             <local:UserAccountView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:JunkPickUserModel}">
+            <local:JunkPickForUser/>
         </DataTemplate>
     </Window.Resources>
     
