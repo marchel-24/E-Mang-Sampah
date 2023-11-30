@@ -41,7 +41,7 @@ namespace E_Mang_Sampah
 
         }
 
-        private void SetTextInCodeBehind()
+        public void SetTextInCodeBehind()
         {
             if(SessionData.CurrentAccount is PartnerAccount)
             {

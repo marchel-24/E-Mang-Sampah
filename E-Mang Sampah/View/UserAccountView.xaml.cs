@@ -54,6 +54,8 @@ namespace E_Mang_Sampah.View
             editAccount.Username = UsernameLabel.Text;
             editAccount.Password = PasswordLabel.Text;
             db.SaveChanges();
+            SessionData.CurrentAccount = editAccount;
+            ((MainWindow)SessionData.CurrentWindow).SetTextInCodeBehind();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
