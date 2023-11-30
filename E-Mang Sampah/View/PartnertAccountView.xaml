@@ -33,7 +33,7 @@
             <StackPanel Grid.Row="1"
                         Margin="5, 0, 0, 0"
                         VerticalAlignment="Center">
-                <TextBlock Text="Hello, Marcel"
+                <TextBlock x:Name="NameLabel"
                            FontSize="24"
                            FontFamily="Gilroy"
                            FontWeight="DemiBold"
@@ -44,7 +44,7 @@
             <StackPanel Grid.Row="2"
                         Margin="5, 0, 0, 0"
                         VerticalAlignment="Center">
-                <TextBlock Text="UserName"
+                <TextBlock Text="Company Name"
                            FontSize="18"
                            FontFamily="Gilroy"
                            FontWeight="DemiBold"
@@ -59,7 +59,9 @@
                         Margin="10, 0, 0,0"
                         
                         >
-                <TextBox TextWrapping="Wrap" 
+                <TextBox 
+                    x:Name="CompanyNameLabel"
+                    TextWrapping="Wrap" 
                          Width="600"
                          TextAlignment="Left" 
                          Background="Transparent" 
@@ -71,7 +73,7 @@
             <StackPanel Grid.Row="4"
             Margin="5, 0, 0, 0"
             VerticalAlignment="Center">
-                <TextBlock Text="Company Name"
+                <TextBlock Text="Username"
                FontSize="18"
                FontFamily="Gilroy"
                FontWeight="DemiBold"
@@ -86,7 +88,9 @@
             Margin="10, 0, 0,0"
             
             >
-                <TextBox TextWrapping="Wrap" 
+                <TextBox 
+                    x:Name="UsernameLabel" 
+                    TextWrapping="Wrap" 
              Width="600"
              TextAlignment="Left" 
              Background="Transparent" 
@@ -113,7 +117,9 @@
             Margin="10, 0, 0,0"
             
             >
-                <TextBox TextWrapping="Wrap" 
+                <TextBox 
+                    x:Name="PasswordLabel"
+                    TextWrapping="Wrap" 
              Width="600"
              TextAlignment="Left" 
              Background="Transparent" 
@@ -135,7 +141,7 @@
                                 Width="92"
                                 Background="#FFE20F0F" 
                                 Foreground="White"
-                                Margin="0,0,10,2">
+                                Margin="0,0,10,2" Click="btnDelete_Click">
                 </Button>
 
                 <Button x:Name="btnCancel"
@@ -144,7 +150,7 @@
                                 Width="92"
                                 Background="#FFC0C8D8" 
                                 Foreground="#FF236075"
-                                Margin="0,0,10,2">
+                                Margin="0,0,10,2" Click="btnCancel_Click">
                 </Button>
 
                 <Button x:Name="btnUpdate"
@@ -153,7 +159,7 @@
                                 Width="92"
                                 Background="#FF236075"
                                 Foreground="#FFC0C8D8"
-                                Margin="0,0,10,2">
+                                Margin="0,0,10,2" Click="btnUpdate_Click">
                 </Button>
 
             </StackPanel>

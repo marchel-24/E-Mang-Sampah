@@ -124,7 +124,7 @@
 
                         <RadioButton Style="{StaticResource menuButton}"
                              Tag="{StaticResource ButtonColor1}"
-                                     Command="{Binding ShowPartnerAccountCommand}">
+                                     Command="{Binding ShowAccountCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="Person" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Account" Style="{StaticResource menuButtonText}"/>

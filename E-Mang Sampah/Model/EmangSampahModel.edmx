@@ -45,8 +45,8 @@
       <PropertyRef Name="PostsId" />
     </Key>
     <Property Name="PostsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Content" Type="int" Nullable="false" />
-    <Property Name="LikesCount" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LikesCount" Type="int" Nullable="false" />
     <Property Name="UploadTime" Type="datetime" Nullable="false" />
     <Property Name="AccountId" Type="int" Nullable="false" />
   </EntityType>
@@ -58,6 +58,7 @@
     <Property Name="UserAccountId" Type="int" Nullable="false" />
     <Property Name="PartnerAccountId" Type="int" Nullable="false" />
     <Property Name="OrderReqTime" Type="datetime" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Accounts_UserAccount">
     <Key>
@@ -182,8 +183,8 @@
             <PropertyRef Name="PostsId" />
           </Key>
           <Property Name="PostsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Content" Type="Int32" Nullable="false" />
-          <Property Name="LikesCount" Type="String" Nullable="false" />
+          <Property Name="Content" Type="String" Nullable="false" />
+          <Property Name="LikesCount" Type="Int32" Nullable="false" />
           <Property Name="UploadTime" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="Account" Relationship="EmangSampahModel.AccountPosts" FromRole="Posts" ToRole="Account" />
           <Property Name="AccountId" Type="Int32" Nullable="false" />
@@ -210,6 +211,7 @@
           <NavigationProperty Name="PartnerAccount" Relationship="EmangSampahModel.PartnerAccountOrder" FromRole="Order" ToRole="PartnerAccount" />
           <Property Name="PartnerAccountId" Type="Int32" Nullable="false" />
           <Property Name="OrderReqTime" Type="DateTime" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="UserAccountOrder">
           <End Type="EmangSampahModel.UserAccount" Role="UserAccount" Multiplicity="1" />
@@ -281,6 +283,7 @@
           <ScalarProperty Name="UserAccountId" ColumnName="UserAccountId" />
           <ScalarProperty Name="PartnerAccountId" ColumnName="PartnerAccountId" />
           <ScalarProperty Name="OrderReqTime" ColumnName="OrderReqTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

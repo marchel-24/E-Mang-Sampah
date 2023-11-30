@@ -93,6 +93,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmangSampahModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Extension\UserAccountExtension.cs" />
     <Compile Include="Model\Order.cs">
       <DependentUpon>EmangSampahModel.tt</DependentUpon>
     </Compile>

@@ -15,8 +15,8 @@ namespace E_Mang_Sampah.Model
     public partial class Posts
     {
         public int PostsId { get; set; }
-        public int Content { get; set; }
-        public string LikesCount { get; set; }
+        public string Content { get; set; }
+        public int LikesCount { get; set; }
         public System.DateTime UploadTime { get; set; }
         public int AccountId { get; set; }
     

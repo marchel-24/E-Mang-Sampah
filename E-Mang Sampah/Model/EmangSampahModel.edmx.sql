@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/27/2023 08:37:32
+-- Date Created: 11/29/2023 16:39:44
 -- Generated from EDMX file: C:\Users\ASUS\source\repos\E-Mang-Sampah\E-Mang Sampah\Model\EmangSampahModel.edmx
 -- --------------------------------------------------
 
@@ -20,6 +20,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_AccountPosts]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Posts] DROP CONSTRAINT [FK_AccountPosts];
 GO
+IF OBJECT_ID(N'[dbo].[FK_UserAccountOrder]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Orders] DROP CONSTRAINT [FK_UserAccountOrder];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PartnerAccountOrder]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Orders] DROP CONSTRAINT [FK_PartnerAccountOrder];
+GO
 IF OBJECT_ID(N'[dbo].[FK_UserAccount_inherits_Account]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Accounts_UserAccount] DROP CONSTRAINT [FK_UserAccount_inherits_Account];
 GO
@@ -36,6 +42,9 @@ IF OBJECT_ID(N'[dbo].[Accounts]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Posts]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Posts];
+GO
+IF OBJECT_ID(N'[dbo].[Orders]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Orders];
 GO
 IF OBJECT_ID(N'[dbo].[Accounts_UserAccount]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Accounts_UserAccount];
@@ -59,8 +68,8 @@ GO
 -- Creating table 'Posts'
 CREATE TABLE [dbo].[Posts] (
     [PostsId] int IDENTITY(1,1) NOT NULL,
-    [Content] int  NOT NULL,
-    [LikesCount] nvarchar(max)  NOT NULL,
+    [Content] nvarchar(max)  NOT NULL,
+    [LikesCount] int  NOT NULL,
     [UploadTime] datetime  NOT NULL,
     [AccountId] int  NOT NULL
 );
@@ -71,7 +80,8 @@ CREATE TABLE [dbo].[Orders] (
     [OrderId] int IDENTITY(1,1) NOT NULL,
     [UserAccountId] int  NOT NULL,
     [PartnerAccountId] int  NOT NULL,
-    [OrderReqTime] datetime  NOT NULL
+    [OrderReqTime] datetime  NOT NULL,
+    [Description] nvarchar(max)  NOT NULL
 );
 GO
 

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Xml;
+using E_Mang_Sampah.Model;
+using E_Mang_Sampah.Services.Session;
 
 namespace E_Mang_Sampah.ViewModel
 {
@@ -25,14 +28,12 @@ namespace E_Mang_Sampah.ViewModel
         }
 
         public ICommand ShowMainViewCommand { get; }
-        public ICommand ShowPartnerAccountCommand { get; }
-        public ICommand ShowUserAccountCommand { get; }
+        public ICommand ShowAccountCommand { get; }
 
         public MainViewModel()
         {
             ShowMainViewCommand = new ViewModelCommand(ExecuteShowTestView);
-            ShowPartnerAccountCommand = new ViewModelCommand(ExecutePartnerAccountView);
-            ShowUserAccountCommand = new ViewModelCommand(ExecuteUserAccountView);
+            ShowAccountCommand = new ViewModelCommand(ExecuteAccountView);
 
 
             ExecuteShowTestView(null);    
@@ -44,14 +45,16 @@ namespace E_Mang_Sampah.ViewModel
             CurrentChildView = new WelcomeViewModel();
         }
 
-        private void ExecutePartnerAccountView(object obj)
+        private void ExecuteAccountView(object obj)
         {
-            CurrentChildView = new PartnerAccountModel();
-        }
-
-        private void ExecuteUserAccountView(object obj)
-        {
-            CurrentChildView = new UserAccountViewModel();
+            if (SessionData.CurrentAccount is PartnerAccount)
+            {
+               CurrentChildView = new PartnerAccountModel();
+            }
+            else if (SessionData.CurrentAccount is UserAccount)
+            {
+               CurrentChildView = new UserAccountViewModel();
+            }
         }
         
     }
