@@ -45,7 +45,7 @@
                            Margin="5, 5, 0, 0"
                            FontWeight="SemiBold"
                            Foreground="{StaticResource ButtonContent1}" Width="201"/>
-                <TextBox x:Name="Description_Sampah"
+                <TextBox x:Name="DescriptionSampah"
                          MaxWidth="200"
                     TextWrapping="Wrap"
                     Grid.Column="1"
@@ -95,7 +95,7 @@
                             Margin="0,15,0,0"
                             FontFamily="Gilroy"
                             FontWeight="Semibold"
-                            Cursor="Hand">
+                            Cursor="Hand" Click="BtnOrderForUser_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="{StaticResource ButtonColor2}"/>

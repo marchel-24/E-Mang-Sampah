@@ -1,4 +1,5 @@
 ﻿using E_Mang_Sampah.Model;
+using E_Mang_Sampah.Services.Session;
 using E_Mang_Sampah.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace E_Mang_Sampah.View
     public partial class JunkPickForUser : UserControl
     {
         EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
+        PartnerAccount choosenPartner = new PartnerAccount();
 
         public JunkPickForUser()
         {
@@ -41,10 +43,20 @@ namespace E_Mang_Sampah.View
             if (sender is MenuItem clickedMenuItem)
             {
                 PartnerMenu.Header = clickedMenuItem.Header;
+                choosenPartner = db.Accounts.OfType<PartnerAccount>().FirstOrDefault(r => r.CompanyName == clickedMenuItem.Header.ToString());
             }
         }
 
-
-
+        private void BtnOrderForUser_Click(object sender, RoutedEventArgs e)
+        {
+            Order order = new Order();
+            order.PartnerAccount = choosenPartner;
+            order.UserAccount = db.Accounts.OfType<UserAccount>().First(r => r.Username == SessionData.CurrentAccount.Username);
+            order.OrderReqTime = DateTime.Now;
+            order.Description = DescriptionSampah.Text;
+            db.Orders.Add(order);
+            db.SaveChanges();
+            MessageBox.Show("Order Suceeded", "Order");
+        }
     }
 }
