@@ -39,6 +39,8 @@
     <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Latitude" Type="float" Nullable="false" />
+    <Property Name="Longitude" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="Posts">
     <Key>
@@ -168,6 +170,8 @@
           <Property Name="Username" Type="String" Nullable="false" />
           <Property Name="Password" Type="String" Nullable="false" />
           <NavigationProperty Name="Posts" Relationship="EmangSampahModel.AccountPosts" FromRole="Account" ToRole="Posts" />
+          <Property Name="Latitude" Type="Double" Nullable="false" />
+          <Property Name="Longitude" Type="Double" Nullable="false" />
         </EntityType>
         <EntityType Name="UserAccount" BaseType="EmangSampahModel.Account">
           <Property Name="FirstName" Type="String" Nullable="false" />
@@ -249,6 +253,8 @@
           <ScalarProperty Name="AccountId" ColumnName="AccountId" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
         </MappingFragment>
       </EntityTypeMapping>
       <EntityTypeMapping TypeName="IsTypeOf(EmangSampahModel.UserAccount)">

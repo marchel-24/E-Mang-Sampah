@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Device.Location;
+using Microsoft.Maps.MapControl.WPF;
 
 namespace E_Mang_Sampah.View
 {
@@ -32,9 +34,15 @@ namespace E_Mang_Sampah.View
             foreach (var partnerAccount in db.Accounts.OfType<PartnerAccount>())
             {
                 MenuItem menuItem = new MenuItem();
+                var pushPin = new Pushpin();
+                var toolTip = new ToolTip();
+                toolTip.Content = partnerAccount.CompanyName;
+                pushPin.Location = new Location(partnerAccount.Latitude, partnerAccount.Longitude);
+                ToolTipService.SetToolTip(pushPin, toolTip);
                 menuItem.Header = partnerAccount.CompanyName;
                 menuItem.Click += PartnersMenuItem_Click;
                 PartnerMenu.Items.Add(menuItem);
+                BingMap.Children.Add(pushPin);
             }
         }
 
@@ -44,6 +52,8 @@ namespace E_Mang_Sampah.View
             {
                 PartnerMenu.Header = clickedMenuItem.Header;
                 choosenPartner = db.Accounts.OfType<PartnerAccount>().FirstOrDefault(r => r.CompanyName == clickedMenuItem.Header.ToString());
+                BingMap.ZoomLevel = 18;
+                BingMap.Center = new Location(choosenPartner.Latitude, choosenPartner.Longitude);
             }
         }
 

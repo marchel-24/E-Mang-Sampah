@@ -25,9 +25,8 @@
                    Margin="5,10,5,5"
                    Height="250"
                    Center="-7.771317095452585, 110.37772145337762"
-                   ZoomLevel="18"
+                   ZoomLevel="13"
                    VerticalAlignment="Top">
-                <m:Pushpin Location="-7.771317095452585, 110.37772145337762"/>
             </m:Map>
         </StackPanel>
         <StackPanel Grid.Row="1">

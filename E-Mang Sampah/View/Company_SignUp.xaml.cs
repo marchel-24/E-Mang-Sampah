@@ -2,6 +2,7 @@
 using E_Mang_Sampah.Services.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Device.Location;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,10 +25,13 @@ namespace E_Mang_Sampah.View
     {
         EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
         NavigationManager navigationManager;
+        GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
+
         public Company_SignUp()
         {
             InitializeComponent();
             navigationManager = new NavigationManager(this);
+            watcher.Start();
         }
         private void Windows_Mouse(object sender, MouseButtonEventArgs e)
         {
@@ -54,6 +58,8 @@ namespace E_Mang_Sampah.View
             string companyName = TxtCompanyName.Text;
             string username = TxtUsername.Text;
             string password = TxtPassword.Password;
+            double lat = watcher.Position.Location.Latitude;
+            double lon = watcher.Position.Location.Longitude;
             if (db.Accounts.Where(r => r.Username == username).Count() > 0)
             {
                 MessageBox.Show("Username has already been taken", "Invalid");
@@ -62,7 +68,7 @@ namespace E_Mang_Sampah.View
                 TxtPassword.Password = "";
                 return;
             }
-            var companyAcc = new PartnerAccount { CompanyName = companyName, Username = username, Password = password };
+            var companyAcc = new PartnerAccount { CompanyName = companyName, Username = username, Password = password, Latitude = lat, Longitude = lon };
             db.Accounts.Add(companyAcc);
             db.SaveChanges();
             MessageBox.Show("Sign Up Succeeded", "Sign Up");
