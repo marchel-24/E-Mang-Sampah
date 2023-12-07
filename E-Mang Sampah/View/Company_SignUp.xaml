@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:E_Mang_Sampah.View"
         mc:Ignorable="d"
-        Title="MitraSignUpView" Height="450" Width="400"
+        Title="MitraSignUpView" Height="600" Width="500"
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
@@ -104,18 +104,18 @@
                         </Button.Template>
                     </Button>
                 </Grid>
-                <StackPanel Width="250"
+                <StackPanel Width="350"
                         Grid.Row="1"
                         Orientation="Vertical"
                         Margin="0,20,0,10">
                     <Image Source="/Images/Logo.png"
-                                   Width="75"
-                                   Height="75"
+                                   Width="100"
+                                   Height="100"
                                    Margin="0,5,0,0"/>
                     <TextBlock Text="Welcome, Partner"
                                        FontFamily="Gilroy"
                                        FontWeight="Bold"
-                                       FontSize="24"
+                                       FontSize="28"
                                        Margin="0,10,0,0"
                                        Foreground="{StaticResource titleColor1}"
                                        HorizontalAlignment="Center"
@@ -123,20 +123,20 @@
                     <TextBlock Text="Jadilah bagian dari solusi, bukan polusi."
                                        FontFamily="Gilroy"
                                        FontWeight="Medium"
-                                       FontSize="8"
+                                       FontSize="12"
                                        Foreground="{StaticResource titleColor1}"
                                        HorizontalAlignment="Center"
                                        Margin="0,10,0,0"/>
                     <TextBlock Text="Company Name"
                                        FontFamily="Gilroy"
                                        FontWeight="SemiBold"
-                                       FontSize="13"
+                                       FontSize="18"
                                        Foreground="{StaticResource titleColor1}"
                                        Margin="0,20,0,0"
                                        />
 
                     <TextBox x:Name="TxtCompanyName"
-                                      FontSize="11"
+                                      FontSize="12"
                                       FontWeight="Medium"
                                       FontFamily="Gilroy"
                                       Foreground="{StaticResource titleColor1}"
@@ -154,16 +154,44 @@
                         </TextBox.Background>
                     </TextBox>
 
+                    <TextBlock Text="Address"
+                               FontFamily="Gilroy"
+                               FontWeight="SemiBold"
+                               FontSize="18"
+                               Foreground="{StaticResource titleColor1}"
+                               Margin="0,5,0,0"
+/>
+
+                    <TextBox x:Name="TxtAddress"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Gilroy"
+                               Foreground="{StaticResource titleColor1}"
+                               CaretBrush="{StaticResource ObjColor1}"
+                               BorderBrush="{StaticResource BorderColor1}"
+                               BorderThickness="0,0,0,2"
+                               Height="28"
+                               VerticalContentAlignment="Center"
+                               Margin="0,5,0,0"
+                               Padding="28,0,0,0">
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Images/user.png"
+                                 Stretch="Uniform"
+                                 AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+
+
                     <TextBlock Text="Username"
                            FontFamily="Gilroy"
                            FontWeight="SemiBold"
-                           FontSize="13"
+                           FontSize="18"
                            Foreground="{StaticResource titleColor1}"
                            Margin="0,5,0,0"
                            />
 
                     <TextBox x:Name="TxtUsername"
-                          FontSize="11"
+                          FontSize="12"
                           FontWeight="Medium"
                           FontFamily="Gilroy"
                           Foreground="{StaticResource titleColor1}"
@@ -182,30 +210,37 @@
                     </TextBox>
 
                     <TextBlock Text="Password"
-                                       FontFamily="Gilroy"
-                                       FontWeight="SemiBold"
-                                       FontSize="13"
-                                       Foreground="{StaticResource titleColor1}"
-                                       Margin="0,10,0,0"
-                                       />
+                               FontFamily="Gilroy"
+                               FontWeight="SemiBold"
+                               FontSize="18"
+                               Foreground="{StaticResource titleColor1}"
+                               Margin="0,10,0,0"/>
                     <PasswordBox x:Name="TxtPassword"
-                                     FontSize="11"
-                                     FontWeight="Medium"
-                                     FontFamily="Gilroy"
-                                     Foreground="{StaticResource titleColor1}"
-                                     CaretBrush="{StaticResource ObjColor1}"
-                                     BorderBrush="{StaticResource BorderColor1}"
-                                     BorderThickness="0,0,0,2"
-                                     Height="28"
-                                     VerticalContentAlignment="Center"
-                                     Margin="0,5,0,0"
-                                     Padding="28,0,0,0">
+                                 FontSize="12"
+                                 FontWeight="Medium"
+                                 FontFamily="Gilroy"
+                                 Foreground="{StaticResource titleColor1}"
+                                 CaretBrush="{StaticResource ObjColor1}"
+                                 BorderBrush="{StaticResource BorderColor1}"
+                                 BorderThickness="0,0,0,2"
+                                 Height="28"
+                                 VerticalContentAlignment="Center"
+                                 Margin="0,5,0,0"
+                                 Padding="28,0,0,0">
                         <PasswordBox.Background>
                             <ImageBrush ImageSource="/Images/password.png"
                                         Stretch="Uniform"
                                         AlignmentX="Left"/>
                         </PasswordBox.Background>
                     </PasswordBox>
+
+                    <TextBlock  Text="*) Pastikan anda ada di rumah"
+                                FontFamily="Gilroy"
+                                FontWeight="Light"
+                                FontSize="10"
+                                Foreground="{StaticResource titleColor1}"
+                                Margin="0,5,0,0">
+                    </TextBlock>
 
                     <Button x:Name="BtnSignUp"
                                     BorderThickness="0"
