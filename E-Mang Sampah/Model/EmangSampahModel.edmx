@@ -41,6 +41,7 @@
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Latitude" Type="float" Nullable="false" />
     <Property Name="Longitude" Type="float" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Posts">
     <Key>
@@ -61,6 +62,7 @@
     <Property Name="PartnerAccountId" Type="int" Nullable="false" />
     <Property Name="OrderReqTime" Type="datetime" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Accounts_UserAccount">
     <Key>
@@ -172,6 +174,7 @@
           <NavigationProperty Name="Posts" Relationship="EmangSampahModel.AccountPosts" FromRole="Account" ToRole="Posts" />
           <Property Name="Latitude" Type="Double" Nullable="false" />
           <Property Name="Longitude" Type="Double" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="UserAccount" BaseType="EmangSampahModel.Account">
           <Property Name="FirstName" Type="String" Nullable="false" />
@@ -216,6 +219,7 @@
           <Property Name="PartnerAccountId" Type="Int32" Nullable="false" />
           <Property Name="OrderReqTime" Type="DateTime" Nullable="false" />
           <Property Name="Description" Type="String" Nullable="false" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="UserAccountOrder">
           <End Type="EmangSampahModel.UserAccount" Role="UserAccount" Multiplicity="1" />
@@ -255,6 +259,7 @@
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Latitude" ColumnName="Latitude" />
           <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
         </MappingFragment>
       </EntityTypeMapping>
       <EntityTypeMapping TypeName="IsTypeOf(EmangSampahModel.UserAccount)">
@@ -290,6 +295,7 @@
           <ScalarProperty Name="PartnerAccountId" ColumnName="PartnerAccountId" />
           <ScalarProperty Name="OrderReqTime" ColumnName="OrderReqTime" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

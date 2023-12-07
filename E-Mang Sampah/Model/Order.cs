@@ -19,6 +19,7 @@ namespace E_Mang_Sampah.Model
         public int PartnerAccountId { get; set; }
         public System.DateTime OrderReqTime { get; set; }
         public string Description { get; set; }
+        public bool Status { get; set; }
     
         public virtual UserAccount UserAccount { get; set; }
         public virtual PartnerAccount PartnerAccount { get; set; }

@@ -54,6 +54,7 @@ namespace E_Mang_Sampah.View
             string lastName = TxtLastname.Text;
             string username = TxtUsername.Text;
             string password = TxtPassword.Password;
+            string address = TxtAddress.Text;
             double lat = watcher.Position.Location.Latitude;
             double lon = watcher.Position.Location.Longitude;
             if (db.Accounts.Where(r => r.Username == username).Count() > 0)
@@ -65,7 +66,7 @@ namespace E_Mang_Sampah.View
                 TxtPassword.Password = "";
                 return;
             }
-            var userAcc = new UserAccount { FirstName = firstName, LastName = lastName, Username = username, Password = password, Latitude = lat, Longitude = lon };
+            var userAcc = new UserAccount { FirstName = firstName, LastName = lastName, Username = username, Password = password, Latitude = lat, Longitude = lon, Address = address };
             db.Accounts.Add(userAcc);
             db.SaveChanges();
             MessageBox.Show("Sign Up Succeeded", "Sign Up");

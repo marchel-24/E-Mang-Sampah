@@ -1,4 +1,7 @@
-﻿using System;
+﻿using E_Mang_Sampah.Model;
+using E_Mang_Sampah.Services.Session;
+using Microsoft.Maps.MapControl.WPF;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -21,13 +24,22 @@ namespace E_Mang_Sampah.View
     /// </summary>
     public partial class JunkPickForPartner : UserControl
     {
+        int partnerId = ((PartnerAccount)SessionData.CurrentAccount).AccountId;
+        EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
         public JunkPickForPartner()
         {
             InitializeComponent();
-           ObservableCollection<Member> members = new ObservableCollection<Member>();
+            ObservableCollection<Member> members = new ObservableCollection<Member>();
 
             //Create Info
-            members.Add(new Member { Number = "1", Name = "Edo", Position = "Rumah", Status = "Selesai" });
+            int n = 1;
+            foreach(var orderAcc in db.Orders.Where(r => r.PartnerAccountId == partnerId))
+            {
+                //var acc = db.Accounts.OfType<UserAccount>().Where(r => r.Orders.)
+                members.Add(new Member { Number = n++.ToString(), Name = orderAcc.UserAccount.GetFullName(), Address = orderAcc.UserAccount.Address, Status = "Selesai" });
+                var pushPin = new Pushpin();
+                
+            }
             memberDataGrid.ItemsSource = members;
         }
     }
@@ -36,7 +48,7 @@ namespace E_Mang_Sampah.View
     {
         public string Number { get; set; }
         public string Name { get; set; }
-        public string Position { get; set; }
+        public string Address { get; set; }
         public string Status { get; set; }
     }
 }

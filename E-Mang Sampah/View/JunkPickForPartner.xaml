@@ -9,8 +9,8 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <m:Map Name="BingMap" 
@@ -27,7 +27,7 @@
             <DataGrid.Columns>
             <DataGridTextColumn Header="No." IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}"/>
 
-            <DataGridTemplateColumn Header="Member" IsReadOnly="True" Width="*">
+                <DataGridTemplateColumn Header="Customer" IsReadOnly="True" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -35,11 +35,9 @@
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-            </DataGridTemplateColumn>
-            
-            <DataGridTextColumn Header="Position" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Position}"/>
-
-                <DataGridTextColumn Header="Status" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Status}"/>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Address" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Address}"  />
+                <DataGridTextColumn Header="Status" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Status}" />
             </DataGrid.Columns>
         </DataGrid>
         
