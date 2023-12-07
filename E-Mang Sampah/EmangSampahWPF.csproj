@@ -50,6 +50,7 @@
     <Reference Include="Microsoft.Maps.MapControl.WPF, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Maps.MapControl.WPF.1.0.0.3\lib\net40-Client\Microsoft.Maps.MapControl.WPF.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -124,6 +125,9 @@
     <Compile Include="View\ForTestingOnly.xaml.cs">
       <DependentUpon>ForTestingOnly.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\JunkPickForPartner.xaml.cs">
+      <DependentUpon>JunkPickForPartner.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\JunkPickForUser.xaml.cs">
       <DependentUpon>JunkPickForUser.xaml</DependentUpon>
     </Compile>
@@ -152,6 +156,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Styles\TableUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\UIColor.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -161,6 +169,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\ForTestingOnly.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\JunkPickForPartner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
