@@ -24,22 +24,35 @@ namespace E_Mang_Sampah.View
     /// </summary>
     public partial class JunkPickForPartner : UserControl
     {
-        int partnerId = ((PartnerAccount)SessionData.CurrentAccount).AccountId;
-        EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
+        
         public JunkPickForPartner()
         {
             InitializeComponent();
             ObservableCollection<Member> members = new ObservableCollection<Member>();
 
             //Create Info
-            int n = 1;
-            foreach(var orderAcc in db.Orders.Where(r => r.PartnerAccountId == partnerId))
-            {
-                //var acc = db.Accounts.OfType<UserAccount>().Where(r => r.Orders.)
-                members.Add(new Member { Number = n++.ToString(), Name = orderAcc.UserAccount.GetFullName(), Address = orderAcc.UserAccount.Address, Status = "Selesai" });
-                var pushPin = new Pushpin();
-                
-            }
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
             memberDataGrid.ItemsSource = members;
         }
     }

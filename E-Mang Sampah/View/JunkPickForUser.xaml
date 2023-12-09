@@ -8,9 +8,6 @@
              xmlns:viewModel="clr-namespace:E_Mang_Sampah.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <UserControl.DataContext>
-        <viewModel:JunkPickUserModel/>
-    </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="250"/>

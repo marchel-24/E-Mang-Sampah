@@ -9,37 +9,38 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
 
         <m:Map Name="BingMap" 
                CredentialsProvider="Ukvn2x9fOIi94SdkUHg3~9wMsqEevY0pBK0FXcu7a4w~AtShfaln4nbX5fauwr5cQq8u2iZVFWj8xGijPvKbetae5Hu0JJEiH_xbFtVROl76"
                Margin="5,10,5,5"
-               Height="250"
                Center="-7.771317095452585, 110.37772145337762"
                ZoomLevel="13"
-               VerticalAlignment="Top"
+               VerticalAlignment="Stretch"
+               
                Grid.Row="0">
         </m:Map>
 
-        <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="1" x:Name="memberDataGrid" Margin="-4,0,4,0">
-            <DataGrid.Columns>
-            <DataGridTextColumn Header="No." IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}"/>
-
-                <DataGridTemplateColumn Header="Customer" IsReadOnly="True" Width="*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Address" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Address}"  />
-                <DataGridTextColumn Header="Status" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Status}" />
-            </DataGrid.Columns>
-        </DataGrid>
-        
+        <ScrollViewer Grid.Row="1" VerticalAlignment="Stretch">
+            <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" x:Name="memberDataGrid" Margin="-4,0,4,0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="No." IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Number}"/>
+                    <DataGridTemplateColumn Header="Customer" IsReadOnly="True" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Address" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Address}"  />
+                    <DataGridTextColumn Header="Status" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Status}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+    
     </Grid>
 </UserControl>
