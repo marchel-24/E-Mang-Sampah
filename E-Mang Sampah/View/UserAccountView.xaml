@@ -19,136 +19,137 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition/>
                 <RowDefinition Height="40"/>
 
             </Grid.RowDefinitions>
+            
             <StackPanel Grid.Row="1"
-                Margin="5, 0, 0, 0"
-                VerticalAlignment="Center">
-                <TextBlock 
-                    x:Name="NameLabel"
-                   FontSize="24"
-                   FontFamily="Gilroy"
-                   FontWeight="DemiBold"
-                   Foreground="{StaticResource ButtonContent1}"/>
-
+                        Margin="5, 0, 0, 0"
+                        VerticalAlignment="Center">
+            <TextBlock  x:Name="NameLabel"
+                        FontSize="24"
+                        FontFamily="Gilroy"
+                        FontWeight="DemiBold"
+                        Foreground="{StaticResource ButtonContent1}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="2"
-                Margin="5, 0, 0, 0"
-                VerticalAlignment="Center">
-                <TextBlock Text="First Name"
-                   FontSize="18"
-                   FontFamily="Gilroy"
-                   FontWeight="DemiBold"
-                   Foreground="{StaticResource ButtonContent1}"
-                   />
-
+                        Margin="5, 0, 0, 0"
+                        VerticalAlignment="Center">
+            <TextBlock  Text="First Name"
+                        FontSize="18"
+                        FontFamily="Gilroy"
+                        FontWeight="DemiBold"
+                        Foreground="{StaticResource ButtonContent1}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="3"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Left"
-                Margin="10, 0, 0,0"
-                
-                >
-                <TextBox 
-                 x:Name = "FirstNameLabel"
-                 TextWrapping="Wrap" 
-                 Width="600"
-                 TextAlignment="Left" 
-                 Background="Transparent" 
-                 Height="25" 
-                 BorderThickness="0, 0, 0, 1"
-                 />
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="10, 0, 0,0">
+            <TextBox    x:Name = "FirstNameLabel"
+                        TextWrapping="Wrap" 
+                        Width="600"
+                        TextAlignment="Left" 
+                        Background="Transparent" 
+                        Height="25" 
+                        BorderThickness="0, 0, 0, 1"/>
             </StackPanel>
 
             <StackPanel Grid.Row="4"
-    Margin="5, 0, 0, 0"
-    VerticalAlignment="Center">
-                <TextBlock Text="Last Name"
-       FontSize="18"
-       FontFamily="Gilroy"
-       FontWeight="DemiBold"
-       Foreground="{StaticResource ButtonContent1}"
-       />
-
+                        Margin="5, 0, 0, 0"
+                        VerticalAlignment="Center">
+            <TextBlock  Text="Last Name"
+                        FontSize="18"
+                        FontFamily="Gilroy"
+                        FontWeight="DemiBold"
+                        Foreground="{StaticResource ButtonContent1}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="5"
-    VerticalAlignment="Center"
-    HorizontalAlignment="Left"
-    Margin="10, 0, 0,0"
-    
-    >
-                <TextBox 
-                    x:Name="LastNameLabel"
-                    TextWrapping="Wrap" 
-     Width="600"
-     TextAlignment="Left" 
-     Background="Transparent" 
-     Height="25" 
-     BorderThickness="0, 0, 0, 1"
-     />
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="10, 0, 0,0">
+            <TextBox    x:Name="LastNameLabel"
+                        TextWrapping="Wrap" 
+                        Width="600"
+                        TextAlignment="Left" 
+                        Background="Transparent" 
+                        Height="25" 
+                        BorderThickness="0, 0, 0, 1"/>
             </StackPanel>
 
             <StackPanel Grid.Row="6"
-    Margin="5, 0, 0, 0"
-    VerticalAlignment="Center">
-                <TextBlock Text="Username"
-       FontSize="18"
-       FontFamily="Gilroy"
-       FontWeight="DemiBold"
-       Foreground="{StaticResource ButtonContent1}"
-       />
-
+                        Margin="5, 0, 0, 0"
+                        VerticalAlignment="Center">
+            <TextBlock  Text="Adress"
+                        FontSize="18"
+                        FontFamily="Gilroy"
+                        FontWeight="DemiBold"
+                        Foreground="{StaticResource ButtonContent1}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="7"
-    VerticalAlignment="Center"
-    HorizontalAlignment="Left"
-    Margin="10, 0, 0,0"
-    
-    >
-                <TextBox 
-                    x:Name="UsernameLabel"
-                    TextWrapping="Wrap" 
-     Width="600"
-     TextAlignment="Left" 
-     Background="Transparent" 
-     Height="25" 
-     BorderThickness="0, 0, 0, 1"
-     />
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="10, 0, 0,0">
+            <TextBox    x:Name="Address"
+                        TextWrapping="Wrap" 
+                        Width="600"
+                        TextAlignment="Left" 
+                        Background="Transparent" 
+                        Height="25" 
+                        BorderThickness="0, 0, 0, 1"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="8"
-Margin="5, 0, 0, 0"
-VerticalAlignment="Center">
-                <TextBlock Text="Password"
-   FontSize="18"
-   FontFamily="Gilroy"
-   FontWeight="DemiBold"
-   Foreground="{StaticResource ButtonContent1}"
-   />
 
+            <StackPanel Grid.Row="8"
+                        Margin="5, 0, 0, 0"
+                        VerticalAlignment="Center">
+            <TextBlock  Text="Username"
+                        FontSize="18"
+                        FontFamily="Gilroy"
+                        FontWeight="DemiBold"
+                        Foreground="{StaticResource ButtonContent1}"/>
             </StackPanel>
 
             <StackPanel Grid.Row="9"
-VerticalAlignment="Center"
-HorizontalAlignment="Left"
-Margin="10, 0, 0,0"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="10, 0, 0,0" >
+            <TextBox    x:Name="UsernameLabel"
+                        TextWrapping="Wrap" 
+                        Width="600"
+                        TextAlignment="Left" 
+                        Background="Transparent" 
+                        Height="25" 
+                        BorderThickness="0, 0, 0, 1"/>
+            </StackPanel>
 
->
-                <TextBox 
-                    x:Name="PasswordLabel"
-                    TextWrapping="Wrap" 
- Width="600"
- TextAlignment="Left" 
- Background="Transparent" 
- Height="25" 
- BorderThickness="0, 0, 0, 1"
- />
+            <StackPanel Grid.Row="10"
+                        Margin="5, 0, 0, 0"
+                        VerticalAlignment="Center">
+            <TextBlock  Text="Password"
+                        FontSize="18"
+                        FontFamily="Gilroy"
+                        FontWeight="DemiBold"
+                        Foreground="{StaticResource ButtonContent1}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="11"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="10, 0, 0,0">
+            <TextBox    x:Name="PasswordLabel"
+                        TextWrapping="Wrap" 
+                        Width="600"
+                        TextAlignment="Left" 
+                        Background="Transparent" 
+                        Height="25" 
+                        BorderThickness="0, 0, 0, 1"/>
             </StackPanel>
 
 
