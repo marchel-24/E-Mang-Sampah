@@ -9,7 +9,6 @@
          WindowStyle="None"
          ResizeMode="NoResize"
          WindowStartupLocation="CenterScreen"
-         MouseDown="Windows_Mouse"
          Background="Transparent"
          >
 
@@ -46,7 +45,6 @@
                         Content="-"
                         FontSize="24"
                         Grid.Column="1"
-                        Click="BtnMinimized_click"
                         FontFamily="Ca"
                         >
                             <Button.Style>
@@ -79,7 +77,6 @@
                         Content="X"
                         FontSize="12"
                         Grid.Column="2"
-                        Click="BtnClosed_Click"
                         FontFamily="Calibri">
                             <Button.Style>
                                 <Style TargetType="Button">
@@ -182,7 +179,7 @@
                             FontSize="15"
                             Grid.Column="2"
                             Margin="0,25,0,0"
-                            Click="BtnSignUp_Click"
+                            Click="BtnVerification_Click"
                             FontFamily="Gilroy"
                             FontWeight="Semibold"
                             Cursor="Hand">

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/07/2023 16:33:33
+-- Date Created: 12/11/2023 13:57:28
 -- Generated from EDMX file: C:\Users\ASUS\source\repos\E-Mang-Sampah\E-Mang Sampah\Model\EmangSampahModel.edmx
 -- --------------------------------------------------
 
@@ -74,7 +74,8 @@ CREATE TABLE [dbo].[Posts] (
     [Content] nvarchar(max)  NOT NULL,
     [LikesCount] int  NOT NULL,
     [UploadTime] datetime  NOT NULL,
-    [AccountId] int  NOT NULL
+    [AccountId] int  NOT NULL,
+    [Image] varbinary(max)  NOT NULL
 );
 GO
 

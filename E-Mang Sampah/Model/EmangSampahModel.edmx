@@ -52,6 +52,7 @@
     <Property Name="LikesCount" Type="int" Nullable="false" />
     <Property Name="UploadTime" Type="datetime" Nullable="false" />
     <Property Name="AccountId" Type="int" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Orders">
     <Key>
@@ -195,6 +196,7 @@
           <Property Name="UploadTime" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="Account" Relationship="EmangSampahModel.AccountPosts" FromRole="Posts" ToRole="Account" />
           <Property Name="AccountId" Type="Int32" Nullable="false" />
+          <Property Name="Image" Type="Binary" Nullable="false" />
         </EntityType>
         <Association Name="AccountPosts">
           <End Type="EmangSampahModel.Account" Role="Account" Multiplicity="1" />
@@ -284,6 +286,7 @@
           <ScalarProperty Name="LikesCount" ColumnName="LikesCount" />
           <ScalarProperty Name="UploadTime" ColumnName="UploadTime" />
           <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

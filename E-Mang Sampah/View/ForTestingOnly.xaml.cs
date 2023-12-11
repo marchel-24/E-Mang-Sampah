@@ -22,6 +22,10 @@ namespace E_Mang_Sampah.View
         public ForTestingOnly()
         {
             InitializeComponent();
+            stackPanel.Children.Add(new TextBox());
+            stackPanel.Children.Add(new TextBox());
+            stackPanel.Children.Add(new TextBox());
+            stackPanel.Children.Add(new TextBox());
         }
     }
 }

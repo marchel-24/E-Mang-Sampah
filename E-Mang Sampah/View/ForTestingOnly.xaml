@@ -22,5 +22,6 @@
        ZoomLevel="18"
        VerticalAlignment="Top"
        Grid.Row="0"/>
+        <StackPanel x:Name="stackPanel" Grid.Row="1"/>
     </Grid>
 </Window>

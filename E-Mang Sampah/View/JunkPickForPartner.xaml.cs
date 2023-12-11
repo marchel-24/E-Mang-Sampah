@@ -24,35 +24,35 @@ namespace E_Mang_Sampah.View
     /// </summary>
     public partial class JunkPickForPartner : UserControl
     {
-        
+        int partnerId = ((PartnerAccount)SessionData.CurrentAccount).AccountId;
+        EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
         public JunkPickForPartner()
         {
             InitializeComponent();
             ObservableCollection<Member> members = new ObservableCollection<Member>();
+            List<UserAccount> accounts = new List<UserAccount>();
 
             //Create Info
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
-            members.Add(new Member { Number = "1", Name = "Edo", Address = "Rumah", Status = "Selesai" });
+            int n = 1;
+            foreach (var orderAcc in db.Orders.Where(r => r.PartnerAccountId == partnerId))
+            {
+
+                if (!accounts.Contains(orderAcc.UserAccount))
+                {
+                    accounts.Add(orderAcc.UserAccount);
+                }
+                members.Add(new Member { Number = n++.ToString(), Name = orderAcc.UserAccount.GetFullName(), Address = orderAcc.UserAccount.Address, Description = orderAcc.Description, Status = "Selesai" });
+            }
+            foreach (var account in accounts)
+            {
+                var pushPin = new Pushpin();
+                var toolTip = new ToolTip();
+                toolTip.Content = account.GetFullName();
+                pushPin.Location = new Location(account.Latitude, account.Longitude);
+                ToolTipService.SetToolTip(pushPin, toolTip);
+                BingMap.Children.Add(pushPin);
+
+            }
             memberDataGrid.ItemsSource = members;
         }
     }
@@ -63,5 +63,6 @@ namespace E_Mang_Sampah.View
         public string Name { get; set; }
         public string Address { get; set; }
         public string Status { get; set; }
+        public string Description { get; set; }
     }
 }

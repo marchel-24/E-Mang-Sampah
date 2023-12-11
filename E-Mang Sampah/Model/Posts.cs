@@ -19,6 +19,7 @@ namespace E_Mang_Sampah.Model
         public int LikesCount { get; set; }
         public System.DateTime UploadTime { get; set; }
         public int AccountId { get; set; }
+        public byte[] Image { get; set; }
     
         public virtual Account Account { get; set; }
     }

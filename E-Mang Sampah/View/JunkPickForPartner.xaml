@@ -9,8 +9,8 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="6*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
 
         <m:Map Name="BingMap" 
@@ -37,6 +37,7 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     <DataGridTextColumn Header="Address" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Address}"  />
+                    <DataGridTextColumn Header="Description" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Description}" />
                     <DataGridTextColumn Header="Status" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Status}" />
                 </DataGrid.Columns>
             </DataGrid>

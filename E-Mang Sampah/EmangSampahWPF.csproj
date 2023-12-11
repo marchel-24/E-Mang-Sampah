@@ -114,6 +114,7 @@
     <Compile Include="ViewModel\JunkPickPartnerModel.cs" />
     <Compile Include="ViewModel\JunkPickUserModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MakePostModel.cs" />
     <Compile Include="ViewModel\PartnerAccountModel.cs" />
     <Compile Include="ViewModel\Test2Model.cs" />
     <Compile Include="ViewModel\UserAccountViewModel.cs" />
