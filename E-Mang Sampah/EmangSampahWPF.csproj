@@ -142,6 +142,9 @@
     <Compile Include="View\NotifMitra.xaml.cs">
       <DependentUpon>NotifMitra.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PostTemplate.xaml.cs">
+      <DependentUpon>PostTemplate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SignUpView.xaml.cs">
       <DependentUpon>SignUpView.xaml</DependentUpon>
     </Compile>
@@ -163,6 +166,10 @@
     <Page Include="Styles\ButtonColor.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\Like_Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Social.xaml">
       <SubType>Designer</SubType>
@@ -215,6 +222,10 @@
     <Page Include="View\NotifMitra.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PostTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SignUpView.xaml">
       <SubType>Designer</SubType>

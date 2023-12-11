@@ -143,6 +143,7 @@
         <Setter Property="Height" Value="9"/>
     </Style>
 
+    <!--Text Box-->
     <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
         <Setter Property="Background" Value="White"/>
         <Setter Property="BorderThickness" Value="1"/>

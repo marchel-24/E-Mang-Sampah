@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="E_Mang_Sampah.View.PostTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:E_Mang_Sampah.View"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition />
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" VerticalAlignment="Bottom">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.09*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBlock Text="Nama" FontFamily="Gilroy" FontWeight="DemiBold" Foreground="{StaticResource ButtonContent1}"/>
+                    <fa:IconImage Icon="Circle" Height="5" Margin="5 0 5 0 "/>
+                    <TextBlock Text="Date" FontFamily="Gilroy" FontWeight="Light" Foreground="{StaticResource titleColor2}"/>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+                <TextBlock Text="Baalmasklcnaksnckanjdkjanwdam kasnxla" Grid.Row="1" Margin="60 5 1 0" TextWrapping="Wrap" FontFamily="Gilroy" Foreground="Black"/>
+        <Image Source="../Images/Logo.png" Grid.Row="2" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="3" VerticalAlignment="Center">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.09*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <RadioButton Style="{StaticResource Button_like}"
+                                 Tag="Black">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Heart" Style="{StaticResource ButtonIcon_Fa}"/>
+                            <TextBlock Text="100" Style="{StaticResource Like_Count}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>
