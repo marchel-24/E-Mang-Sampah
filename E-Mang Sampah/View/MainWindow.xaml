@@ -168,7 +168,8 @@
                                 Style="{StaticResource controlButton1}"
                                 Tag="{StaticResource ButtonColor_Click}"
                                 Click="BtnClosed_Click">
-                            <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
+                            <fa:IconImage Icon="Xmark" 
+                                          Style="{StaticResource controlButtonIcon}"/>
 
                         </Button>
 
@@ -176,16 +177,18 @@
                                 Style="{StaticResource controlButton2}"
                                 Tag="{StaticResource ButtonColor_Click}"
                                 Click="btnMaximize_Click">
-                            <fa:IconImage Icon="Square" Style="{StaticResource controlButtonIcon}"/>
+                            <fa:IconImage Icon="Square" 
+                                          Style="{StaticResource controlButtonIcon}"/>
 
                         </Button>
                         
                         <Button
-                            x:Name="btnMinimize"
+          x:Name="btnMinimize"
                                 Style="{StaticResource controlButton2}"
                                 Tag="{StaticResource ButtonColor_Click}"
                                 Click="BtnMinimize_Click">
-                            <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
+                            <fa:IconImage Icon="WindowMinimize" Width="12" 
+                                          Style="{StaticResource controlButtonIcon}"/>
                             
                         </Button>
                         <StackPanel Width="100">
@@ -194,6 +197,37 @@
                                        VerticalAlignment="Center"
                                        Margin="0, 7, 0, 0"/>
                         </StackPanel>
+
+                        <Button x:Name="btnSignOut"
+                                BorderThickness="0"
+                                Content="Sign Out"
+                                BorderBrush="Transparent"
+                                Width="auto">
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Foreground" Value="{StaticResource ButtonContent1}"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border Background="{TemplateBinding Background}" CornerRadius="4">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="White"/>
+                                            <Setter Property="Foreground" Value="Red"/>
+                                            <Setter Property="BorderBrush" Value="Transparent"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            
+                        </Button>
 
                     </StackPanel>
 
