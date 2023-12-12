@@ -142,6 +142,9 @@
     <Compile Include="View\NotifMitra.xaml.cs">
       <DependentUpon>NotifMitra.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PostMain.xaml.cs">
+      <DependentUpon>PostMain.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PostTemplate.xaml.cs">
       <DependentUpon>PostTemplate.xaml</DependentUpon>
     </Compile>
@@ -222,6 +225,10 @@
     <Page Include="View\NotifMitra.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PostMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PostTemplate.xaml">
       <SubType>Designer</SubType>

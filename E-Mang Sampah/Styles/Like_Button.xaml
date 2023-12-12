@@ -55,4 +55,36 @@
         <Setter Property="FontSize" Value="13.5"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
+
+    <Style x:Key="CircularCheckBoxStyle" TargetType="CheckBox">
+        <Setter Property="Foreground" Value="#000000"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="#000000"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid>
+                        <!-- Outer circle -->
+                        <Ellipse x:Name="OuterCircle" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="{TemplateBinding BorderThickness}" Width="20" Height="20"/>
+
+                        <!-- Inner circle (indicator) -->
+                        <Ellipse x:Name="InnerCircle" Fill="{TemplateBinding Foreground}" Width="10" Height="10" Visibility="Collapsed"/>
+
+                        <!-- Checkmark icon -->
+                        <Path x:Name="CheckIcon" Data="M0,5 L5,10 L15,0" Stroke="{TemplateBinding Foreground}" StrokeThickness="2" Visibility="Collapsed"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="InnerCircle" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="OuterCircle" Property="Stroke" Value="#FF1B6B93"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
