@@ -154,37 +154,101 @@
 
 
             <StackPanel x:Name="tombol"
-                        Grid.Row="14"
-                        Orientation="Horizontal"
-                        FlowDirection="RightToLeft"
-                        Background="Transparent"
-                        Margin="0,0,10,5">
+                     Grid.Row="14"
+                     Orientation="Horizontal"
+                     FlowDirection="RightToLeft"
+                     Background="Transparent"
+                     Margin="0,0,5,0">
 
                 <Button x:Name="btnDelete"
-                        Content="Delete"
-                        Style="{StaticResource controlButton1}"
-                        Width="92"
-                        Background="#FFE20F0F" 
-                        Foreground="White"
-                        Margin="0,0,10,2" Click="btnDelete_Click">
+                     Content="Delete"
+                     Width="92"
+                     Margin="0,0,10,2" 
+                     Click="btnDelete_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="{StaticResource ButtonContent2}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ButtonContent3}"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource ButtonColor2_Hover}"/>
+                                    <Setter Property="Foreground" Value="{StaticResource ButtonContent2}"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" 
+                         Height="25" 
+                         CornerRadius="2" 
+                         Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
                 </Button>
 
+
                 <Button x:Name="btnCancel"
-                        Content="Cancel"
-                        Style="{StaticResource controlButton1}"
-                        Width="92"
-                        Background="#FFC0C8D8" 
-                        Foreground="#FF236075"
-                        Margin="0,0,10,2" Click="btnCancel_Click">
+                     Content="Cancel"
+                     Width="92"
+                     Margin="0,0,10,2" 
+                     Click="btnCancel_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="{StaticResource ButtonColor2}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ButtonContent3}"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#14506E"/>
+                                    <Setter Property="Foreground" Value="#000000"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" 
+                                    Height="25" 
+                                    CornerRadius="2" 
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
                 </Button>
 
                 <Button x:Name="btnUpdate"
-                        Content="Update"
-                        Style="{StaticResource controlButton1}"
-                        Width="92"
-                        Background="#FF236075"
-                        Foreground="#FFC0C8D8"
-                        Margin="0,0,10,2" Click="btnUpdate_Click">
+                     Content="Update"
+                     Width="92"
+                     Margin="0,0,10,2" 
+                     Click="btnUpdate_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="{StaticResource ButtonColor2}"/>
+                            <Setter Property="Foreground" Value="{StaticResource ButtonContent3}"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{StaticResource ButtonColor2_Hover}"/>
+                                    <Setter Property="Foreground" Value="{StaticResource ButtonContent3_Hover}"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="100" 
+                                    Height="25" 
+                                    CornerRadius="2" 
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
                 </Button>
 
             </StackPanel>
