@@ -111,6 +111,7 @@
     <Compile Include="Services\Session\SessionData.cs" />
     <Compile Include="Services\Validation\ValidationManager.cs" />
     <Compile Include="Services\Navigation\NavigationManager.cs" />
+    <Compile Include="ViewModel\Community.cs" />
     <Compile Include="ViewModel\JunkPickPartnerModel.cs" />
     <Compile Include="ViewModel\JunkPickUserModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
@@ -122,6 +123,9 @@
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelCommand.cs" />
     <Compile Include="ViewModel\WelcomeViewModel.cs" />
+    <Compile Include="View\Community.xaml.cs">
+      <DependentUpon>Community.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Company_SignUp.xaml.cs">
       <DependentUpon>Company_SignUp.xaml</DependentUpon>
     </Compile>
@@ -145,9 +149,6 @@
     </Compile>
     <Compile Include="View\PostMain.xaml.cs">
       <DependentUpon>PostMain.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PostTemplate.xaml.cs">
-      <DependentUpon>PostTemplate.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SignUpView.xaml.cs">
       <DependentUpon>SignUpView.xaml</DependentUpon>
@@ -186,6 +187,10 @@
     <Page Include="Styles\UIColor.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Community.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Company_SignUp.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -228,10 +233,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PostMain.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\PostTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

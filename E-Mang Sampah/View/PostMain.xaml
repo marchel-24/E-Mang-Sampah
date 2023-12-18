@@ -5,15 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:E_Mang_Sampah.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp">
     <UserControl.Resources>
         <ResourceDictionary>
-            
+           
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <ScrollViewer>
-            <StackPanel x:Name="spPosts" HorizontalAlignment="Stretch"/>
-        </ScrollViewer>
+        <ScrollViewer Panel.ZIndex="0">
+                <StackPanel x:Name="spPosts" HorizontalAlignment="Stretch"/>
+            </ScrollViewer>
     </Grid>
 </UserControl>

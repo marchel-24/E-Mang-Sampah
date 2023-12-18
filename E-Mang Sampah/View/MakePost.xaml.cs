@@ -25,10 +25,12 @@ namespace E_Mang_Sampah.View
     public partial class MakePost : UserControl
     {
         EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
+        public event EventHandler<bool> ShowSwitchButtonChanged;
         private byte[] _imageFile = new byte[0];
         public MakePost()
         {
             InitializeComponent();
+            ShowSwitchButtonChanged?.Invoke(this, false);
         }
 
         private void btnUploadPicture_Click(object sender, RoutedEventArgs e)
@@ -60,8 +62,8 @@ namespace E_Mang_Sampah.View
                     imageControl.Source = imageSource;
                 }
 
-                tbPostImageURL.IsEnabled = false;
-                tbPostImageURL.Text = "< Uploaded Image >";
+                //tbPostImageURL.IsEnabled = false;
+                //tbPostImageURL.Text = "< Uploaded Image >";
             }
             else
             {

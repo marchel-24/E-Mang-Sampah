@@ -178,5 +178,10 @@ namespace E_Mang_Sampah.View
                 spMain.Children.Add(border_Header);
             }
         }
+
+        private void btnMakePost_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
