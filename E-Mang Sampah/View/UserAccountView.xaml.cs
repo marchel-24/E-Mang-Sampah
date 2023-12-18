@@ -53,6 +53,7 @@ namespace E_Mang_Sampah.View
             editAccount.LastName = LastNameLabel.Text;
             editAccount.Username = UsernameLabel.Text;
             editAccount.Password = PasswordLabel.Text;
+            editAccount.Xp = ((UserAccount)SessionData.CurrentAccount).Xp;
             db.SaveChanges();
             SessionData.CurrentAccount = editAccount;
             ((MainWindow)SessionData.CurrentWindow).SetTextInCodeBehind();

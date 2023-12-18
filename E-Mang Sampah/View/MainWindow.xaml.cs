@@ -45,10 +45,12 @@ namespace E_Mang_Sampah
             if(SessionData.CurrentAccount is PartnerAccount)
             {
                 NameLabel.Text = ((PartnerAccount)SessionData.CurrentAccount).CompanyName;
+                XpLabel.Text = "";
             }
             else if(SessionData.CurrentAccount is UserAccount)
             {
                 NameLabel.Text = ((UserAccount)SessionData.CurrentAccount).GetFullName();
+                XpLabel.Text = ((UserAccount)SessionData.CurrentAccount).Xp.ToString();
             }
         }
 

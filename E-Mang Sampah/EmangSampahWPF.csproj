@@ -111,7 +111,7 @@
     <Compile Include="Services\Session\SessionData.cs" />
     <Compile Include="Services\Validation\ValidationManager.cs" />
     <Compile Include="Services\Navigation\NavigationManager.cs" />
-    <Compile Include="ViewModel\Community.cs" />
+    <Compile Include="ViewModel\CommunityModel.cs" />
     <Compile Include="ViewModel\JunkPickPartnerModel.cs" />
     <Compile Include="ViewModel\JunkPickUserModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />

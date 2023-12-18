@@ -74,7 +74,7 @@ namespace E_Mang_Sampah.View
         private void btnNewPost_Click(object sender, RoutedEventArgs e)
         {
             Posts post = new Posts();
-            post.Account = db.Accounts.OfType<UserAccount>().First(r => r.Username == SessionData.CurrentAccount.Username);
+            post.Account = db.Accounts.First(r => r.Username == SessionData.CurrentAccount.Username);
             post.LikesCount = 0;
             post.Content = tbPostContent.Text;
             post.UploadTime = DateTime.Now;

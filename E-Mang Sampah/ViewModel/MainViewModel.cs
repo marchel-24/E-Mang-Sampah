@@ -78,7 +78,7 @@ namespace E_Mang_Sampah.ViewModel
 
         private void ExecuteCommunityView(object obj)
         {
-            CurrentChildView = new PostMainModel();
+            CurrentChildView = new CommunityModel();
         }
 
         private void ExecuteMakePostView(object obj)

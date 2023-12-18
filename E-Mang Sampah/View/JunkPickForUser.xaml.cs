@@ -1,9 +1,4 @@
-﻿
-
-
-
-
-using E_Mang_Sampah.Model;
+﻿using E_Mang_Sampah.Model;
 using E_Mang_Sampah.Services.Session;
 using E_Mang_Sampah.ViewModel;
 using System;
@@ -72,6 +67,11 @@ namespace E_Mang_Sampah.View
             db.Orders.Add(order);
             db.SaveChanges();
             MessageBox.Show("Order Suceeded", "Order");
+            if(SessionData.CurrentAccount is UserAccount)
+            {
+                ((UserAccount)SessionData.CurrentAccount).Xp += 20;
+                ((MainWindow)SessionData.CurrentWindow).SetTextInCodeBehind();
+            }
         }
     }
 }

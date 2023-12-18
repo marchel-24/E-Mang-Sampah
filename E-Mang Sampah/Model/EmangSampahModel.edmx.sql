@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/11/2023 13:57:28
+-- Date Created: 12/18/2023 17:34:51
 -- Generated from EDMX file: C:\Users\ASUS\source\repos\E-Mang-Sampah\E-Mang Sampah\Model\EmangSampahModel.edmx
 -- --------------------------------------------------
 
@@ -94,6 +94,7 @@ GO
 CREATE TABLE [dbo].[Accounts_UserAccount] (
     [FirstName] nvarchar(max)  NOT NULL,
     [LastName] nvarchar(max)  NOT NULL,
+    [Xp] int  NOT NULL,
     [AccountId] int  NOT NULL
 );
 GO

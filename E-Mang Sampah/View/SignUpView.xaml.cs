@@ -66,7 +66,7 @@ namespace E_Mang_Sampah.View
                 TxtPassword.Password = "";
                 return;
             }
-            var userAcc = new UserAccount { FirstName = firstName, LastName = lastName, Username = username, Password = password, Latitude = lat, Longitude = lon, Address = address };
+            var userAcc = new UserAccount { FirstName = firstName, LastName = lastName, Username = username, Password = password, Latitude = lat, Longitude = lon, Address = address, Xp = 0 };
             db.Accounts.Add(userAcc);
             db.SaveChanges();
             MessageBox.Show("Sign Up Succeeded", "Sign Up");

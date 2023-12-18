@@ -22,6 +22,7 @@ namespace E_Mang_Sampah.Model
     
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public int Xp { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }

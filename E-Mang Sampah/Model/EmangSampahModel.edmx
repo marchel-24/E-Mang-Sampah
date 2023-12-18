@@ -71,6 +71,7 @@
     </Key>
     <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
     <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Xp" Type="int" Nullable="false" />
     <Property Name="AccountId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Accounts_PartnerAccount">
@@ -181,6 +182,7 @@
           <Property Name="FirstName" Type="String" Nullable="false" />
           <Property Name="LastName" Type="String" Nullable="false" />
           <NavigationProperty Name="Orders" Relationship="EmangSampahModel.UserAccountOrder" FromRole="UserAccount" ToRole="Order" />
+          <Property Name="Xp" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="PartnerAccount" BaseType="EmangSampahModel.Account">
           <Property Name="CompanyName" Type="String" Nullable="false" />
@@ -269,6 +271,7 @@
           <ScalarProperty Name="AccountId" ColumnName="AccountId" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Xp" ColumnName="Xp" />
         </MappingFragment>
       </EntityTypeMapping>
       <EntityTypeMapping TypeName="IsTypeOf(EmangSampahModel.PartnerAccount)">

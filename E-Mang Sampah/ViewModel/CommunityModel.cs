@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_Mang_Sampah.ViewModel
 {
-    public class Community:ViewModelBase
+    public class CommunityModel:ViewModelBase
     {
     }
 }
