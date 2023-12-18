@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="/Styles/UIColor.xaml"/>
                 <ResourceDictionary Source="/Styles/ButtonColor.xaml"/>
                 <ResourceDictionary Source="/Styles/TableUI.xaml"/>
+                <ResourceDictionary Source="/Styles/Like_Button.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

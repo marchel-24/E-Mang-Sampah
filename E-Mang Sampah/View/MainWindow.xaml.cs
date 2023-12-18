@@ -17,6 +17,9 @@ using System.Windows.Interop;
 using E_Mang_Sampah.Model;
 using E_Mang_Sampah.Services.Session;
 using E_Mang_Sampah.ViewModel;
+using E_Mang_Sampah.Services.Navigation;
+using E_Mang_Sampah.View;
+using WpfApp1;
 
 namespace E_Mang_Sampah
 {
@@ -25,10 +28,12 @@ namespace E_Mang_Sampah
     /// </summary>
     public partial class MainWindow : Window
     {
+        NavigationManager navigationManager;
         public MainWindow()
         {
             InitializeComponent();
             SetTextInCodeBehind();
+            navigationManager = new NavigationManager(this);
             SessionData.CurrentWindow = this;
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
@@ -76,6 +81,9 @@ namespace E_Mang_Sampah
             this.WindowState = WindowState.Minimized;
         }
 
-        
+        private void btnSignOut_Click(object sender, RoutedEventArgs e)
+        {
+            navigationManager.NavigateWindow(new LoginView());
+        }
     }
 }

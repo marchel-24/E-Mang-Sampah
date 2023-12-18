@@ -31,6 +31,7 @@ namespace E_Mang_Sampah.ViewModel
         public ICommand ShowAccountCommand { get; }
         public ICommand ShowJunkPickCommand { get; }
         public ICommand ShowCommunityCommand { get; }
+        public ICommand ShowMakePostCommand { get; }
 
 
         public MainViewModel()
@@ -39,6 +40,7 @@ namespace E_Mang_Sampah.ViewModel
             ShowAccountCommand = new ViewModelCommand(ExecuteAccountView);
             ShowJunkPickCommand = new ViewModelCommand(ExecuteJunkPickView);
             ShowCommunityCommand = new ViewModelCommand(ExecuteCommunityView);
+            ShowMakePostCommand = new ViewModelCommand(ExecuteMakePostView);
 
 
             ExecuteShowTestView(null);    
@@ -75,6 +77,11 @@ namespace E_Mang_Sampah.ViewModel
         }
 
         private void ExecuteCommunityView(object obj)
+        {
+            CurrentChildView = new PostMainModel();
+        }
+
+        private void ExecuteMakePostView(object obj)
         {
             CurrentChildView = new MakePostModel();
         }

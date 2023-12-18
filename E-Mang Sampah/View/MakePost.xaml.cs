@@ -25,7 +25,7 @@ namespace E_Mang_Sampah.View
     public partial class MakePost : UserControl
     {
         EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
-        private byte[] _imageFile = null;
+        private byte[] _imageFile = new byte[0];
         public MakePost()
         {
             InitializeComponent();

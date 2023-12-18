@@ -36,6 +36,9 @@
         <DataTemplate DataType="{x:Type viewModel:MakePostModel}">
             <local:MakePost/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:PostMainModel}">
+            <local:PostMain/>
+        </DataTemplate>
     </Window.Resources>
     
         <Border CornerRadius="10"
@@ -122,7 +125,8 @@
                         </RadioButton>
 
                         <RadioButton Style="{StaticResource menuButton}"
-                             Tag="{StaticResource ButtonColor1}">
+                             Tag="{StaticResource ButtonColor1}"
+                                     Command="{Binding ShowMakePostCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="Gamepad" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Games" Style="{StaticResource menuButtonText}"/>
@@ -202,7 +206,7 @@
                                 BorderThickness="0"
                                 Content="Sign Out"
                                 BorderBrush="Transparent"
-                                Width="auto">
+                                Width="auto" Click="btnSignOut_Click">
 
                             <Button.Style>
                                 <Style TargetType="Button">

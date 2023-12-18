@@ -45,7 +45,7 @@ namespace ConsoleForTest
 
             //Order order = new Order();
             //UserAccount account = db.Accounts.OfType<UserAccount>().First(r => r.FirstName == "Edo");
-            PartnerAccount partnerAccount = db.Accounts.OfType<PartnerAccount>().First(r => r.CompanyName == "TrashCorp");
+            //PartnerAccount partnerAccount = db.Accounts.OfType<PartnerAccount>().First(r => r.CompanyName == "TrashCorp");
             //order.UserAccount = account;
             //order.PartnerAccount = partnerAccount;
             //order.OrderReqTime = DateTime.Now;
@@ -54,12 +54,19 @@ namespace ConsoleForTest
             //db.SaveChanges();
             //Console.ReadLine();
 
-            var order = partnerAccount.Orders.First(r => r.OrderId == 2);
-            Console.WriteLine(order.UserAccount.FirstName);
-            Console.ReadLine();
+            //var order = partnerAccount.Orders.First(r => r.OrderId == 2);
+            //Console.WriteLine(order.UserAccount.FirstName);
+            //Console.ReadLine();
 
             //Posts post = new Posts();
             //post.addLikes();
+
+            byte[] data = new byte[1024];
+            foreach(byte b in data)
+            {
+                Console.WriteLine(b);
+            }
+            Console.ReadLine();
         }
     }
 }
