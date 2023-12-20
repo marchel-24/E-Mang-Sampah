@@ -23,5 +23,17 @@
                         Style="{StaticResource controlButtonIcon2}"/>
 
         </Button>
+
+        <Button x:Name="BackUserControl"
+            Style="{StaticResource MakePost}"
+            Tag="{StaticResource ButtonColor2_Click}"
+            Click="BackUserControl_Click"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Margin="0 0 15 10">
+            <fa:IconImage Icon="LongArrowLeft" 
+                Style="{StaticResource controlButtonIcon2}"/>
+
+        </Button>
     </Grid>
 </UserControl>

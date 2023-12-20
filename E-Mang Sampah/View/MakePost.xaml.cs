@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 using E_Mang_Sampah.Model;
 using E_Mang_Sampah.Services.Session;
+using System.Security.Cryptography;
 
 namespace E_Mang_Sampah.View
 {
@@ -26,11 +27,13 @@ namespace E_Mang_Sampah.View
     {
         EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
         public event EventHandler<bool> ShowSwitchButtonChanged;
+        
         private byte[] _imageFile = new byte[0];
         public MakePost()
         {
             InitializeComponent();
             ShowSwitchButtonChanged?.Invoke(this, false);
+            
         }
 
         private void btnUploadPicture_Click(object sender, RoutedEventArgs e)

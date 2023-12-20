@@ -302,6 +302,11 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\10-order.png" />
+    <Resource Include="Images\100-order.png" />
+    <Resource Include="Images\50-order.png" />
+    <Resource Include="Images\Vector-1.png" />
+    <Resource Include="Images\Vector.png" />
     <Content Include="Model\EmangSampahModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EmangSampahModel.Context.cs</LastGenOutput>

@@ -43,17 +43,32 @@ namespace E_Mang_Sampah.View
         {
             contentControl.Content = new PostMain();
             ShowSwitchButton(true);
+            ShowBackButton(false);
         }
 
         private void SwitchToSecondUserControl()
         {
             contentControl.Content = new MakePost();
             ShowSwitchButton(false);
+            ShowBackButton(true);
         }
 
         private void ShowSwitchButton(bool show)
         {
             SwitchUserControl.Visibility = show ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void ShowBackButton(bool show)
+        {
+            BackUserControl.Visibility = show ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void BackUserControl_Click(object sender, RoutedEventArgs e)
+        {
+            if (contentControl.Content is MakePost)
+            {
+                SwitchToFirstUserControl();
+            }
         }
     }
 }

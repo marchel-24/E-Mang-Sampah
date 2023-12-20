@@ -202,13 +202,22 @@
                             <TextBlock x:Name="NameLabel" 
                                        HorizontalAlignment="Center" 
                                        VerticalAlignment="Center"
-                                       Margin="0, 7, 0, 0"/>
+                                       Margin="0, 7, 0, 0"
+                                       FontFamily="Gilroy"
+                                       FontWeight="Regular"/>
                         </StackPanel>
 
+                        <Image x:Name="XpLabel" 
+                                       HorizontalAlignment="Stretch" 
+                                       VerticalAlignment="Stretch"
+                                   Source="/Images/10-order.png"
+                                   Width="20"/>
+                        
                         <Button x:Name="btnSignOut"
                                 BorderThickness="0"
                                 Content="Sign Out"
                                 BorderBrush="Transparent"
+                                Margin="5"
                                 Width="auto" Click="btnSignOut_Click">
 
                             <Button.Style>
@@ -233,14 +242,8 @@
                                     </Style.Triggers>
                                 </Style>
                             </Button.Style>
-                            
+
                         </Button>
-                        <StackPanel Width="100">
-                            <TextBlock x:Name="XpLabel" 
-                                       HorizontalAlignment="Center" 
-                                       VerticalAlignment="Center"
-                                       Margin="0, 7, 0, 0"/>
-                        </StackPanel>
 
                     </StackPanel>
 

@@ -24,14 +24,16 @@ namespace E_Mang_Sampah.View
     public partial class PostMain : UserControl
     {
         EmangSampahModelContainer1 db = new EmangSampahModelContainer1();
+        public event EventHandler<bool> ShowBackButtonChanged;
+        private bool isImage1 = true;
         string HexColorTitle = "#1b6b93";
         public PostMain()
         {
             InitializeComponent();
             var posts = db.Posts;
-            
-            
-            foreach(var post in posts)
+            ShowBackButtonChanged?.Invoke(this, false);
+
+            foreach (var post in posts)
             {
 
                 StackPanel sBorder = new StackPanel
@@ -149,13 +151,23 @@ namespace E_Mang_Sampah.View
 
                 spImage.Children.Add(dynamicImageContent);
 
-                CheckBox likeButton = new CheckBox
+                Button likebutton = new Button
                 {
-                    Style = (Style)Application.Current.FindResource("CircularCheckBoxStyle")
-                };
-                spFooter.Children.Add(likeButton);
+                    Content = new Image
+                    {
+                        Source = new BitmapImage(new Uri("pack://application:,,,/Images/Vector.png")),
+                        Width = 20,
+                        Height = 20,
 
-                
+                    },
+                    Background = Brushes.Transparent,
+                    BorderThickness = new Thickness(0)
+                };
+                likebutton.Click += LikeButton_Click;
+
+                spFooter.Children.Add(likebutton);
+
+
 
                 TextBlock Count_like = new TextBlock
                 {
@@ -178,10 +190,23 @@ namespace E_Mang_Sampah.View
                 spMain.Children.Add(border_Header);
             }
         }
-
-        private void btnMakePost_Click(object sender, RoutedEventArgs e)
+        private void LikeButton_Click(object sender, RoutedEventArgs e)
         {
+            // Mengakses elemen Image di dalam tombol
+            Image myImage = (Image)((Button)sender).Content;
 
+            // Mengubah sumber gambar berdasarkan status
+            if (isImage1)
+            {
+                myImage.Source = new BitmapImage(new Uri("pack://application:,,,/Images/Vector-1.png"));
+            }
+            else
+            {
+                myImage.Source = new BitmapImage(new Uri("pack://application:,,,/Images/Vector.png"));
+            }
+
+            // Mengubah status untuk digunakan pada klik berikutnya
+            isImage1 = !isImage1;
         }
     }
 }
