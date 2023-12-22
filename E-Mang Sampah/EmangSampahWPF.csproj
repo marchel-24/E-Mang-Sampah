@@ -110,7 +110,7 @@
     <Compile Include="Model\UserAccount.cs">
       <DependentUpon>EmangSampahModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Services\ImageControl\ImageManager.cs" />
+    <Compile Include="Services\ImageManager\ImageManager.cs" />
     <Compile Include="Services\Session\SessionData.cs" />
     <Compile Include="Services\Validation\ValidationManager.cs" />
     <Compile Include="Services\Navigation\NavigationManager.cs" />
@@ -127,46 +127,43 @@
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelCommand.cs" />
     <Compile Include="ViewModel\WelcomeViewModel.cs" />
-    <Compile Include="View\Community.xaml.cs">
+    <Compile Include="View\UserControl\Community.xaml.cs">
       <DependentUpon>Community.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Company_SignUp.xaml.cs">
+    <Compile Include="View\Windows\Company_SignUp.xaml.cs">
       <DependentUpon>Company_SignUp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Games.xaml.cs">
+    <Compile Include="View\UserControl\Games.xaml.cs">
       <DependentUpon>Games.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\JunkPickForPartner.xaml.cs">
+    <Compile Include="View\UserControl\JunkPickForPartner.xaml.cs">
       <DependentUpon>JunkPickForPartner.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\JunkPickForUser.xaml.cs">
+    <Compile Include="View\UserControl\JunkPickForUser.xaml.cs">
       <DependentUpon>JunkPickForUser.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LoginView.xaml.cs">
+    <Compile Include="View\Windows\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MakePost.xaml.cs">
+    <Compile Include="View\UserControl\MakePost.xaml.cs">
       <DependentUpon>MakePost.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\NotifMitra.xaml.cs">
+    <Compile Include="View\Windows\NotifMitra.xaml.cs">
       <DependentUpon>NotifMitra.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PostMain.xaml.cs">
+    <Compile Include="View\UserControl\PostMain.xaml.cs">
       <DependentUpon>PostMain.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SignUpView.xaml.cs">
+    <Compile Include="View\Windows\SignUpView.xaml.cs">
       <DependentUpon>SignUpView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PartnertAccountView.xaml.cs">
+    <Compile Include="View\UserControl\PartnertAccountView.xaml.cs">
       <DependentUpon>PartnertAccountView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserAccountView.xaml.cs">
+    <Compile Include="View\UserControl\UserAccountView.xaml.cs">
       <DependentUpon>UserAccountView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\VerificationWindow.xaml.cs">
-      <DependentUpon>VerificationWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\WelcomeView.xaml.cs">
+    <Compile Include="View\UserControl\WelcomeView.xaml.cs">
       <DependentUpon>WelcomeView.xaml</DependentUpon>
     </Compile>
     <Page Include="Styles\ButtonColor.xaml">
@@ -189,27 +186,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Community.xaml">
+    <Page Include="View\UserControl\Community.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Company_SignUp.xaml">
+    <Page Include="View\Windows\Company_SignUp.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\Games.xaml">
+    <Page Include="View\UserControl\Games.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\JunkPickForPartner.xaml">
+    <Page Include="View\UserControl\JunkPickForPartner.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\JunkPickForUser.xaml">
+    <Page Include="View\UserControl\JunkPickForUser.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MainWindow.xaml">
+    <Page Include="View\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -217,43 +214,39 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
+    <Compile Include="View\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\LoginView.xaml">
+    <Page Include="View\Windows\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MakePost.xaml">
+    <Page Include="View\UserControl\MakePost.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\NotifMitra.xaml">
+    <Page Include="View\Windows\NotifMitra.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\PostMain.xaml">
+    <Page Include="View\UserControl\PostMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SignUpView.xaml">
+    <Page Include="View\Windows\SignUpView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PartnertAccountView.xaml">
+    <Page Include="View\UserControl\PartnertAccountView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\UserAccountView.xaml">
+    <Page Include="View\UserControl\UserAccountView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\VerificationWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\WelcomeView.xaml">
+    <Page Include="View\UserControl\WelcomeView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

@@ -23,7 +23,7 @@
                 <RowDefinition/>
 
             </Grid.RowDefinitions>
-            <Image Source="../Images/Logo.png"
+            <Image Source="/Images/Logo.png"
                    Grid.Row="0"/>
 
             
