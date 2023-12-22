@@ -14,9 +14,9 @@
         AllowsTransparency="True">
 
     <Window.DataContext>
-        <viewModel:MainViewModel x:Name="Modeldel"/>
+        <viewModel:MainViewModel/>
     </Window.DataContext>
-    
+
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewModel:WelcomeViewModel}">
             <local:Test/>
@@ -46,8 +46,8 @@
             <local:Games/>
         </DataTemplate>
     </Window.Resources>
-    
-        <Border CornerRadius="10"
+
+    <Border CornerRadius="10"
             BorderThickness="0.1">
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -213,7 +213,6 @@
                         <Image x:Name="XpLabel" 
                                        HorizontalAlignment="Stretch" 
                                        VerticalAlignment="Stretch"
-                                   Source="/Images/10-order.png"
                                    Width="20"/>
                         
                         <Button x:Name="btnSignOut"

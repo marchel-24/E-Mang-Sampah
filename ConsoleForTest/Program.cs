@@ -61,12 +61,9 @@ namespace ConsoleForTest
             //Posts post = new Posts();
             //post.addLikes();
 
-            byte[] data = new byte[1024];
-            foreach(byte b in data)
-            {
-                Console.WriteLine(b);
-            }
-            Console.ReadLine();
+            Tuple<int, string> tagValue = Tuple.Create(1, "wut");
+            Console.Write(tagValue.Item1);
+            Console.Read();
         }
     }
 }

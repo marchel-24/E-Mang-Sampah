@@ -27,6 +27,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -95,6 +96,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmangSampahModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Extension\PostsExtension.cs" />
     <Compile Include="Model\Extension\UserAccountExtension.cs" />
     <Compile Include="Model\Order.cs">
       <DependentUpon>EmangSampahModel.tt</DependentUpon>
@@ -108,6 +110,7 @@
     <Compile Include="Model\UserAccount.cs">
       <DependentUpon>EmangSampahModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Services\ImageControl\ImageManager.cs" />
     <Compile Include="Services\Session\SessionData.cs" />
     <Compile Include="Services\Validation\ValidationManager.cs" />
     <Compile Include="Services\Navigation\NavigationManager.cs" />
@@ -129,9 +132,6 @@
     </Compile>
     <Compile Include="View\Company_SignUp.xaml.cs">
       <DependentUpon>Company_SignUp.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\ForTestingOnly.xaml.cs">
-      <DependentUpon>ForTestingOnly.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Games.xaml.cs">
       <DependentUpon>Games.xaml</DependentUpon>
@@ -156,9 +156,6 @@
     </Compile>
     <Compile Include="View\SignUpView.xaml.cs">
       <DependentUpon>SignUpView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Test2.xaml.cs">
-      <DependentUpon>Test2.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PartnertAccountView.xaml.cs">
       <DependentUpon>PartnertAccountView.xaml</DependentUpon>
@@ -199,10 +196,6 @@
     <Page Include="View\Company_SignUp.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\ForTestingOnly.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Games.xaml">
       <SubType>Designer</SubType>
@@ -245,10 +238,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SignUpView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Test2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -328,6 +317,7 @@
       <DependentUpon>EmangSampahModel.edmx</DependentUpon>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

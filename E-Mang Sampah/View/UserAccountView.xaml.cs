@@ -71,6 +71,7 @@ namespace E_Mang_Sampah.View
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             var delAccount = db.Accounts.OfType<UserAccount>().FirstOrDefault(r => r.Username == SessionData.CurrentAccount.Username);
+            //var delOrder = db.Orders.Where()
             db.Accounts.Remove(delAccount);
             db.SaveChanges();
             MessageBox.Show("Your account has been deleted", "Delete");

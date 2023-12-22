@@ -17,6 +17,7 @@ using Microsoft.Win32;
 using E_Mang_Sampah.Model;
 using E_Mang_Sampah.Services.Session;
 using System.Security.Cryptography;
+using E_Mang_Sampah.Services.ImageControl;
 
 namespace E_Mang_Sampah.View
 {
@@ -43,36 +44,11 @@ namespace E_Mang_Sampah.View
             if (openFileDialog.ShowDialog() == true)
             {
                 _imageFile = File.ReadAllBytes(openFileDialog.FileName);
-                //tbPostImageURL.IsEnabled = false;
-                //tbPostImageURL.Text = "< Uploaded Image >";
-                DisplayImage();
+                imageControl.Source = ImageManager.GetImage(_imageFile);
             }
         }
 
-        private void DisplayImage()
-        {
-            if (_imageFile != null && _imageFile.Length > 0)
-            {
-                using (var stream = new MemoryStream(_imageFile))
-                {
-                    BitmapImage imageSource = new BitmapImage();
-                    imageSource.BeginInit();
-                    imageSource.StreamSource = stream;
-                    imageSource.CacheOption = BitmapCacheOption.OnLoad;
-                    imageSource.EndInit();
-
-                    // Set the Source property of the Image control
-                    imageControl.Source = imageSource;
-                }
-
-                //tbPostImageURL.IsEnabled = false;
-                //tbPostImageURL.Text = "< Uploaded Image >";
-            }
-            else
-            {
-                MessageBox.Show("No image data available.");
-            }
-        }
+        
 
         private void btnNewPost_Click(object sender, RoutedEventArgs e)
         {

@@ -9,7 +9,7 @@ using System.Windows;
 namespace E_Mang_Sampah.Services.Session
 {
     /// <summary>
-    /// Provides sessions to maintain an account accross the application windows or page
+    /// Provides sessions to maintain an account accross the application windows or pages
     /// </summary>
     internal partial class SessionData
     {
@@ -26,6 +26,9 @@ namespace E_Mang_Sampah.Services.Session
 
         private static Window _currentWindow;
 
+        /// <summary>
+        /// Gets or sets the current active <see cref="Window"/> instance.
+        /// </summary>
         public static Window CurrentWindow
         {
             get { return _currentWindow; }

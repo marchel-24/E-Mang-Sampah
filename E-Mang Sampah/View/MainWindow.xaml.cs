@@ -45,12 +45,23 @@ namespace E_Mang_Sampah
             if(SessionData.CurrentAccount is PartnerAccount)
             {
                 NameLabel.Text = ((PartnerAccount)SessionData.CurrentAccount).CompanyName;
-                XpLabel.Text = "";
             }
             else if(SessionData.CurrentAccount is UserAccount)
             {
                 NameLabel.Text = ((UserAccount)SessionData.CurrentAccount).GetFullName();
-                XpLabel.Text = ((UserAccount)SessionData.CurrentAccount).Xp.ToString();
+                if (((UserAccount)SessionData.CurrentAccount).Xp < 10)
+                {
+                    XpLabel.Source = new BitmapImage(new Uri("pack://application:,,,/Images/10-order.png"));
+                }
+                else if (((UserAccount)SessionData.CurrentAccount).Xp < 50)
+                {
+                    XpLabel.Source = new BitmapImage(new Uri("pack://application:,,,/Images/50-order.png"));
+                }
+                else
+                {
+                    XpLabel.Source = new BitmapImage(new Uri("pack://application:,,,/Images/100-order.png"));
+                }
+
             }
         }
 

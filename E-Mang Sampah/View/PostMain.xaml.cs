@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using E_Mang_Sampah.Model;
+using E_Mang_Sampah.Services.ImageControl;
 using FontAwesome.Sharp;
 
 namespace E_Mang_Sampah.View
@@ -27,11 +29,14 @@ namespace E_Mang_Sampah.View
         public event EventHandler<bool> ShowBackButtonChanged;
         private bool isImage1 = true;
         string HexColorTitle = "#1b6b93";
+        private Dictionary<int, TextBlock> textBlocksDictionary;
         public PostMain()
         {
             InitializeComponent();
             var posts = db.Posts;
             ShowBackButtonChanged?.Invoke(this, false);
+            int counter = 1;
+            textBlocksDictionary = new Dictionary<int, TextBlock>();
 
             foreach (var post in posts)
             {
@@ -94,7 +99,6 @@ namespace E_Mang_Sampah.View
                 TextBlock tbTitle = new TextBlock
                 {
                     Text = name,
-                    Cursor = Cursors.Hand,
                     //Tag = posts[i].userID,
                     FontSize = 18,
                     FontFamily = new FontFamily("Gilroy"),
@@ -131,25 +135,28 @@ namespace E_Mang_Sampah.View
                 };
                 spDescription.Children.Add(tbDesc);
 
-                BitmapImage imageSource = new BitmapImage();
-                if (post.Image != null && post.Image.Length > 0)
-                {
-                    using (var stream = new MemoryStream(post.Image))
-                    {
-                        imageSource.BeginInit();
-                        imageSource.StreamSource = stream;
-                        imageSource.CacheOption = BitmapCacheOption.OnLoad;
-                        imageSource.EndInit();
-                    }
-                }
+                var imageSource = ImageManager.GetImage(post.Image);
 
                 Image dynamicImageContent = new Image
                 {
-                    //Tag = ,
                     Source = imageSource
                 };
 
                 spImage.Children.Add(dynamicImageContent);
+
+                TextBlock Count_like = new TextBlock
+                {
+                    Name = $"TextBlock{counter}",
+                    Text = post.LikesCount.ToString(),
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("Black")),
+                    FontFamily = new FontFamily("Arial"),
+                    FontWeight = FontWeights.Regular,
+                    FontSize = 10,
+
+                };
+
+                textBlocksDictionary.Add(counter, Count_like);
 
                 Button likebutton = new Button
                 {
@@ -158,29 +165,22 @@ namespace E_Mang_Sampah.View
                         Source = new BitmapImage(new Uri("pack://application:,,,/Images/Vector.png")),
                         Width = 20,
                         Height = 20,
-
                     },
                     Background = Brushes.Transparent,
-                    BorderThickness = new Thickness(0)
+                    BorderThickness = new Thickness(0),
+                    Tag = Tuple.Create(post.PostsId, counter)
+
                 };
-                likebutton.Click += LikeButton_Click;
+                
 
                 spFooter.Children.Add(likebutton);
 
-
-
-                TextBlock Count_like = new TextBlock
-                {
-                    Text = "Count",
-                    VerticalAlignment = VerticalAlignment.Center,
-                    Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("Black")),
-                    FontFamily = new FontFamily("Arial"),
-                    FontWeight = FontWeights.Regular,
-                    FontSize = 8,
-                };
                 spFooter.Children.Add(Count_like);
 
-                    Border border_Header = new Border
+
+                likebutton.Click += LikeButton_Click;
+
+                Border border_Header = new Border
                     {
                         BorderBrush = Brushes.LightGray,
                         BorderThickness = new Thickness(0, 0, 0, 1),
@@ -188,24 +188,57 @@ namespace E_Mang_Sampah.View
                     };
 
                 spMain.Children.Add(border_Header);
+                counter++;
             }
+
+            
         }
         private void LikeButton_Click(object sender, RoutedEventArgs e)
         {
-            // Mengakses elemen Image di dalam tombol
+
+            //// Mengakses elemen Image di dalam tombol
             Image myImage = (Image)((Button)sender).Content;
+            Button button = sender as Button;
+            Tuple<int, int> tagValue = button?.Tag as Tuple<int, int>;
+            Posts post = db.Posts.FirstOrDefault(r => r.PostsId == tagValue.Item1);
+            var targetTextBlock = textBlocksDictionary[tagValue.Item2];
 
             // Mengubah sumber gambar berdasarkan status
             if (isImage1)
             {
                 myImage.Source = new BitmapImage(new Uri("pack://application:,,,/Images/Vector-1.png"));
+
+
             }
             else
             {
                 myImage.Source = new BitmapImage(new Uri("pack://application:,,,/Images/Vector.png"));
             }
 
-            // Mengubah status untuk digunakan pada klik berikutnya
+            post.AddLikes(isImage1);
+
+
+            //db.SaveChanges();
+            //// Mengubah status untuk digunakan pada klik berikutnya
+            //isImage1 = !isImage1;
+
+            //foreach (var entry in textBlocksDictionary)
+            //{
+            //    int key = entry.Key;
+            //    TextBlock textBlock = entry.Value;
+
+            //    MessageBox.Show($"Key: {key}, TextBlock Name: {textBlock.Name}, Text: {textBlock.Text}");
+            //}
+
+            //MessageBox.Show(tagValue.Item1.ToString());
+            //MessageBox.Show(tagValue.Item2.ToString());
+
+            //MessageBox.Show(textBlocksDictionary[tagValue.Item2].Name);
+
+            //MessageBox.Show(targetTextBlock.Text);
+            targetTextBlock.Text = post.LikesCount.ToString();
+
+            db.SaveChanges();
             isImage1 = !isImage1;
         }
     }

@@ -69,7 +69,10 @@ namespace E_Mang_Sampah.View
             MessageBox.Show("Order Suceeded", "Order");
             if(SessionData.CurrentAccount is UserAccount)
             {
-                ((UserAccount)SessionData.CurrentAccount).Xp += 20;
+                var editAccount = db.Accounts.OfType<UserAccount>().FirstOrDefault(r => r.Username == SessionData.CurrentAccount.Username);
+                editAccount.AddXp(20);
+                db.SaveChanges();
+                ((UserAccount)SessionData.CurrentAccount).AddXp(20);
                 ((MainWindow)SessionData.CurrentWindow).SetTextInCodeBehind();
             }
         }
