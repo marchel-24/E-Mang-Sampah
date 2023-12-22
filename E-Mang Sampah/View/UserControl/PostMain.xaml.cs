@@ -15,8 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using E_Mang_Sampah.Model;
-using E_Mang_Sampah.Services.ImageControl;
 using FontAwesome.Sharp;
+using ImageManager;
 
 namespace E_Mang_Sampah.View
 {
@@ -135,7 +135,7 @@ namespace E_Mang_Sampah.View
                 };
                 spDescription.Children.Add(tbDesc);
 
-                var imageSource = ImageManager.GetImage(post.Image);
+                var imageSource = ImageManager.ImageManager.GetImage(post.Image);
 
                 Image dynamicImageContent = new Image
                 {

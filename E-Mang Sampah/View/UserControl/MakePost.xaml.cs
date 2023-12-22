@@ -17,7 +17,8 @@ using Microsoft.Win32;
 using E_Mang_Sampah.Model;
 using E_Mang_Sampah.Services.Session;
 using System.Security.Cryptography;
-using E_Mang_Sampah.Services.ImageControl;
+using E_Mang_Sampah.Services;
+using ImageManager;
 
 namespace E_Mang_Sampah.View
 {
@@ -44,7 +45,7 @@ namespace E_Mang_Sampah.View
             if (openFileDialog.ShowDialog() == true)
             {
                 _imageFile = File.ReadAllBytes(openFileDialog.FileName);
-                imageControl.Source = ImageManager.GetImage(_imageFile);
+                imageControl.Source = ImageManager.ImageManager.GetImage(_imageFile);
             }
         }
 
@@ -52,15 +53,29 @@ namespace E_Mang_Sampah.View
 
         private void btnNewPost_Click(object sender, RoutedEventArgs e)
         {
-            Posts post = new Posts();
-            post.Account = db.Accounts.First(r => r.Username == SessionData.CurrentAccount.Username);
-            post.LikesCount = 0;
-            post.Content = tbPostContent.Text;
-            post.UploadTime = DateTime.Now;
-            post.Image = _imageFile;
-            db.Posts.Add(post);
-            db.SaveChanges();
+            if((_imageFile == null || _imageFile.Length == 0) && (tbPostContent.Text == "" || tbPostContent.Text.Length == 0))
+            {
+                MessageBox.Show("Please input text or image", "Invalid");
+            }
+            else
+            {
+                Posts post = new Posts();
+                post.Account = db.Accounts.First(r => r.Username == SessionData.CurrentAccount.Username);
+                post.LikesCount = 0;
+                post.Content = tbPostContent.Text;
+                post.UploadTime = DateTime.Now;
+                post.Image = _imageFile;
+                db.Posts.Add(post);
+                db.SaveChanges();
+            }
 
+        }
+
+        private void btnResetPost_Click(object sender, RoutedEventArgs e)
+        {
+            tbPostContent.Text = "";
+            imageControl.Source = null;
+            _imageFile = new byte[0];
         }
     }
 }

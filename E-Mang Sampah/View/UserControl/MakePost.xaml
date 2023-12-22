@@ -80,7 +80,7 @@
                         Width="100" 
                         HorizontalAlignment="Center" 
                         VerticalAlignment="Bottom" 
-                        FontWeight="Bold">
+                        FontWeight="Bold" Click="btnResetPost_Click">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="{StaticResource ButtonColor2}"/>

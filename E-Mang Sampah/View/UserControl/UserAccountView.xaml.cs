@@ -3,6 +3,7 @@ using E_Mang_Sampah.Services.Navigation;
 using E_Mang_Sampah.Services.Session;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,7 +72,16 @@ namespace E_Mang_Sampah.View
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             var delAccount = db.Accounts.OfType<UserAccount>().FirstOrDefault(r => r.Username == SessionData.CurrentAccount.Username);
-            //var delOrder = db.Orders.Where()
+            var delOrder = db.Orders.Where(r => r.UserAccountId == SessionData.CurrentAccount.AccountId);
+            foreach (var order in delOrder)
+            {
+                db.Orders.Remove(order);
+            }
+            var delPost = db.Posts.Where(r => r.AccountId == SessionData.CurrentAccount.AccountId);
+            foreach (var post in delPost)
+            {
+                db.Posts.Remove(post);
+            }
             db.Accounts.Remove(delAccount);
             db.SaveChanges();
             MessageBox.Show("Your account has been deleted", "Delete");
