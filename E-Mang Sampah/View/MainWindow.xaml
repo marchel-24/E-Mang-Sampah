@@ -42,6 +42,9 @@
         <DataTemplate DataType="{x:Type viewModel:CommunityModel}">
             <local:Community/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:GamesModel}">
+            <local:Games/>
+        </DataTemplate>
     </Window.Resources>
     
         <Border CornerRadius="10"
@@ -129,7 +132,7 @@
 
                         <RadioButton Style="{StaticResource menuButton}"
                              Tag="{StaticResource ButtonColor1}"
-                                     Command="{Binding ShowMakePostCommand}">
+                                     Command="{Binding ShowGamesCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <fa:IconImage Icon="Gamepad" Style="{StaticResource menuButtonIcon}"/>
                                 <TextBlock Text="Games" Style="{StaticResource menuButtonText}"/>

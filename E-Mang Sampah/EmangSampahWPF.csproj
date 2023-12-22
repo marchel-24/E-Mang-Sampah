@@ -112,6 +112,7 @@
     <Compile Include="Services\Validation\ValidationManager.cs" />
     <Compile Include="Services\Navigation\NavigationManager.cs" />
     <Compile Include="ViewModel\CommunityModel.cs" />
+    <Compile Include="ViewModel\GamesModel.cs" />
     <Compile Include="ViewModel\JunkPickPartnerModel.cs" />
     <Compile Include="ViewModel\JunkPickUserModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
@@ -131,6 +132,9 @@
     </Compile>
     <Compile Include="View\ForTestingOnly.xaml.cs">
       <DependentUpon>ForTestingOnly.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Games.xaml.cs">
+      <DependentUpon>Games.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\JunkPickForPartner.xaml.cs">
       <DependentUpon>JunkPickForPartner.xaml</DependentUpon>
@@ -197,6 +201,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\ForTestingOnly.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Games.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -307,6 +315,7 @@
     <Resource Include="Images\50-order.png" />
     <Resource Include="Images\Vector-1.png" />
     <Resource Include="Images\Vector.png" />
+    <Resource Include="Images\On-Working.png" />
     <Content Include="Model\EmangSampahModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EmangSampahModel.Context.cs</LastGenOutput>
